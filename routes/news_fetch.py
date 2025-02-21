@@ -25,6 +25,7 @@ async def websocket_endpoint(websocket: WebSocket):
             news_data = await news_fetcher.fetch_and_produce()
             
             if news_data["status"] == "success":
+                print("INFO::  Sending news data...")
                 await websocket.send_json(news_data)
             
             # Wait for 1 minutes before fetching new data
