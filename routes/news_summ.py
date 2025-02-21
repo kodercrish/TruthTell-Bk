@@ -18,7 +18,6 @@ def get_news(url):
         return {
             'status': 'success',
             'summary': article.summary,
-            'keywords': article.keywords,
             'title': article.title,
             'text': article.text,
             'url': url

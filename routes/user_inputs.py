@@ -31,18 +31,22 @@ async def get_fc_url(input_data: UrlInput):
         
         fact_checker = FactChecker(groq_api_key=os.getenv("GROQ_API_KEY"), serper_api_key=os.getenv("SERPER_API_KEY"))
         # Run fact check - it will be run through transformation pipeline
-        fact_check_result = fact_checker.generate_report(news_text['text'])
+        fact_check_result1 = fact_checker.generate_report(news_text['text'])
         
         
-        explanation = explain_factcheck_result(fact_check_result)
+        # explanation = explain_factcheck_result(fact_check_result1)
 
         
         #return an object with fact check result and visualization data, and explanation
         return {
             "status": "success",
             "content": {
-                "fact_check_result": fact_check_result,
-                "explanation": explanation["explanation"],
+                "fact_check_result": {
+                    "detailed_analysis" : {
+                        "overall_analysis" : fact_check_result1["detailed_analysis"]["overall_analysis"],
+                    }
+                }
+                
             }
         }
     except Exception as e:
@@ -53,18 +57,21 @@ async def get_fc_text(input_data: TextInput):
     try:
         fact_checker = FactChecker(groq_api_key=os.getenv("GROQ_API_KEY"), serper_api_key=os.getenv("SERPER_API_KEY"))
         # Run fact check - it will be run through transformation pipeline
-        fact_check_result = fact_checker.generate_report(input_data.text)
+        fact_check_result1 = fact_checker.generate_report(input_data.text)
         
         
-        explanation = explain_factcheck_result(fact_check_result)
+        # explanation = explain_factcheck_result(fact_check_result1)
 
         
         #return an object with fact check result and visualization data, and explanation
         return {
             "status": "success",
             "content": {
-                "fact_check_result": fact_check_result,
-                "explanation": explanation["explanation"],
+                "fact_check_result": {
+                    "detailed_analysis" : {
+                        "overall_analysis" : fact_check_result1["detailed_analysis"]["overall_analysis"],
+                    }
+                }
                 
             }
         }

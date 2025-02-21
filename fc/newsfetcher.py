@@ -5,91 +5,84 @@ from .news_summ import get_news
 from .fact_checker import FactChecker
 from .expAi import explain_factcheck_result, generate_visual_explanation
 import uuid
-import json
+import random
 
-load_dotenv()
+load_dotenv(dotenv_path=".env")
 
 class NewsFetcher:
     def __init__(self):
-        self.newsapi = NewsApiClient(api_key=os.getenv('NEWS_API_KEY'))
-        self.fetched_pages = self.load_fetched_pages()
+        self.newsapi = NewsApiClient(api_key=os.environ.get('NEWS_API_KEY'))
+        self.pending_news = []
         self.fact_checker = FactChecker(
             groq_api_key=os.getenv("GROQ_API_KEY"),
             serper_api_key=os.getenv("SERPER_API_KEY")
         )
 
-    def load_fetched_pages(self):
-        try:
-            with open('fetched_pages.json', 'r') as file:
-                return json.load(file)
-        except FileNotFoundError:
-            return []
-
-    def save_fetched_pages(self):
-        with open('fetched_pages.json', 'w') as file:
-            json.dump(self.fetched_pages, file)
-        
     async def fetch_and_produce(self):
         try:
+            # If pending news exists, return random articles from it
+            if self.pending_news:
+                selected_articles = []
+                num_articles = min(2, len(self.pending_news))
+                
+                for _ in range(num_articles):
+                    random_article = random.choice(self.pending_news)
+                    self.pending_news.remove(random_article)
+                    selected_articles.append(random_article)
+                
+                return {
+                    "status": "success",
+                    "content": selected_articles
+                }
+
+            # If no pending news, fetch new batch
             print("Fetching news...")
             page = 1
             final_articles = []
             
-            while len(final_articles) < 1:  # Fetch until we have at least 5 unique articles
-                print("Fetching page...")
-                news = self.newsapi.get_top_headlines(language='en', page=page, page_size=5)
-
-                print("#"*50)
-                print(f"News: {news}")
-                print("#"*60)
+            while len(final_articles) < 1:
+                news = self.newsapi.get_top_headlines(language='en', page=page, page_size=20)
                 
                 if not news['articles']:
                     break
                 
                 for article in news["articles"]:
                     url = article['url']
-                    if url in self.fetched_pages:
-                        continue
                     
-                    self.fetched_pages.append(url)
-
                     # Get full text
                     news_text = get_news(url)
                     if news_text['status'] == 'error':
                         continue
                     
-                    # Run fact check - it will be run through transformation pipeline
+                    # Run fact check
                     fact_check_result = self.fact_checker.generate_report(news_text['text'])
-                    
-                    
                     explanation = explain_factcheck_result(fact_check_result)
-
-                    # Get visualization data
                     viz_data = generate_visual_explanation(explanation["explanation"])
                 
-                    # Create article object with unique ID
                     article_object = {
                         "id": str(uuid.uuid4()),
-                        "article": article,
+                        "article": article['title'],
                         "full_text": news_text,
-                        "fact_check": fact_check_result,
-                        "explanation": explanation,
-                        "visualization": viz_data
+                        "fact_check": {
+                            "detailed_analysis" : {
+                                "overall_analysis" : fact_check_result["detailed_analysis"]["overall_analysis"],
+                            }
+                        }
                     }
-                    #print("ARTICLE ID: " + article_object["id"])
                     
                     final_articles.append(article_object)
                     
-                    if (len(final_articles) >= 1):
-                        print("hi")
+                    if len(final_articles) >= 1:
                         break
 
-                page += 1  # Move to the next page
+                page += 1
 
-            self.save_fetched_pages()
+            # Store 18 articles in pending_news and return 2
+            self.pending_news = final_articles[2:]
+            print("INFO::  Pending news:", final_articles[:2])
             return {
                 "status": "success",
-                "content": final_articles
+                "content": final_articles[0]
             }
 
         except Exception as e:
