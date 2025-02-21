@@ -10,7 +10,6 @@ dotenv.load_dotenv()
 
 ################################################################################################
 import requests
-import backoff
 import time
 import bs4
 import asyncio
@@ -155,7 +154,6 @@ def crawl_google_web(response, top_k: int = 10):
 
 import os
 import logging
-from flask import g
 from logging.handlers import TimedRotatingFileHandler
 
 class CustomLogger:

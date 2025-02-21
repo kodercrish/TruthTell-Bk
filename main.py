@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from routes.news_fetch import news_router
+from routes.user_inputs import input_router
+import nest_asyncio
+nest_asyncio.apply()
 
 app = FastAPI()
 
@@ -12,6 +16,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(news_router, tags=["News"])
+app.include_router(input_router, tags=["User Inputs"])
 
 @app.get("/")
 def read_root():
