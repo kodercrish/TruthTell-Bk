@@ -29,7 +29,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 await websocket.send_json(news_data)
             
             # Wait for 1 minutes before fetching new data
-            await asyncio.sleep(75)
+            await asyncio.sleep(150)
             
         except WebSocketDisconnect:
             break

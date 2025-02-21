@@ -35,7 +35,7 @@ class NewsFetcher:
             page = 1
             final_articles = []
             
-            while len(final_articles) < 2:  # Fetch until we have at least 5 unique articles
+            while len(final_articles) < 1:  # Fetch until we have at least 5 unique articles
                 print("Fetching page...")
                 news = self.newsapi.get_top_headlines(language='en', page=page, page_size=5)
 
@@ -81,6 +81,7 @@ class NewsFetcher:
                     final_articles.append(article_object)
                     
                     if (len(final_articles) >= 1):
+                        print("hi")
                         break
 
                 page += 1  # Move to the next page
