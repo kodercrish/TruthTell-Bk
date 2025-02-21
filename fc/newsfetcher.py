@@ -75,11 +75,11 @@ class NewsFetcher:
                     if len(final_articles) >= 1:
                         break
 
+                self.pending_news = news[1:]
                 page += 1
 
             # Store 18 articles in pending_news and return 2
-            self.pending_news = final_articles[2:]
-            print("INFO::  Pending news:", final_articles[:2])
+            print("INFO::  Pending news:", final_articles[0])
             return {
                 "status": "success",
                 "content": final_articles[0]
