@@ -169,17 +169,17 @@ class FactChecker:
         )
     
     def generate_verification_questions(self, claim: str) -> List[str]:
-        prompt = {
-            "role": "user",
-            "content": f"Generate specific questions to verify this claim. Make a maximum of 5 questions for the claim. Return as JSON array:\n\n{claim}"
-        }
+        # prompt = {
+        #     "role": "user",
+        #     "content": f"Generate specific questions to verify this claim. Make a maximum of 5 questions for the claim. Return as JSON array:\n\n{claim}"
+        # }
         
-        response = self.client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[prompt],
-            temperature=0.3,
-            response_format={"type": "json_object"}
-        )
+        # response = self.client.chat.completions.create(
+        #     model="llama-3.3-70b-versatile",
+        #     messages=[prompt],
+        #     temperature=0.3,
+        #     response_format={"type": "json_object"}
+        # )
         
         gemini_questions_prompt = f"Generate specific questions to verify this claim. Make a maximum of 5 questions for the claim. Return as JSON array:\n\n{claim}"
 
