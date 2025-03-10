@@ -25,10 +25,13 @@ async def fetch_and_broadcast_news():
     print("Fetching and broadcasting news...")
     try:
         
-        news_data = await news_fetcher.fetch_and_produce()
+        news_data = news_fetcher.fetch_and_produce()
+        
+        print(news_data["status"])
+        print(news_data["content"]["id"])
 
-        if news_data["status"] == "success" :
-            pusher_client.trigger('news-channel', 'news-update', news_data["content"])
+        if news_data["status"] == "success" and news_data["content"]["id"]:
+            pusher_client.trigger('news-channel', 'fact-check', news_data["content"])
             print(f"Successfully broadcasted article: {news_data['content']}")
     except Exception as e:
         print(f"Error in fetch_and_broadcast_news: {e}")

@@ -11,6 +11,7 @@ from urllib.parse import quote
 from .serper_search import SerperEvidenceRetriever
 from google.ai.generativelanguage_v1beta.types import content
 import time
+from routes.news_summ import get_news
 
 dotenv.load_dotenv()
 
@@ -35,12 +36,12 @@ class FactChecker:
         "response_schema": content.Schema(
             type = content.Type.OBJECT,
             enum = [],
-            required = ["overall_analysis", "claim_analysis", "meta_analysis"],
+            required = ["overall_analysis", "claim_analysis"],
             properties = {
             "overall_analysis": content.Schema(
                 type = content.Type.OBJECT,
                 enum = [],
-                required = ["truth_score", "reliability_assessment", "key_findings", "patterns_identified"],
+                required = ["truth_score", "reliability_assessment", "key_findings"],
                 properties = {
                 "truth_score": content.Schema(
                     type = content.Type.NUMBER,
@@ -53,20 +54,14 @@ class FactChecker:
                     items = content.Schema(
                     type = content.Type.STRING,
                     ),
-                ),
-                "patterns_identified": content.Schema(
-                    type = content.Type.ARRAY,
-                    items = content.Schema(
-                    type = content.Type.STRING,
-                    ),
-                ),
+                )
                 },
             ),
             "claim_analysis": content.Schema(
                 type = content.Type.ARRAY,
                 items = content.Schema(
                 type = content.Type.OBJECT,
-                required = ["claim", "verification_status", "confidence_level", "evidence_quality", "source_assessment", "misinformation_impact", "correction_suggestions"],
+                required = ["claim", "verification_status", "confidence_level", "misinformation_impact"],
                 properties = {
                     "claim": content.Schema(
                     type = content.Type.STRING,
@@ -76,58 +71,7 @@ class FactChecker:
                     ),
                     "confidence_level": content.Schema(
                     type = content.Type.NUMBER,
-                    ),
-                    "evidence_quality": content.Schema(
-                    type = content.Type.OBJECT,
-                    required = ["strength", "gaps", "contradictions"],
-                    properties = {
-                        "strength": content.Schema(
-                        type = content.Type.NUMBER,
-                        ),
-                        "gaps": content.Schema(
-                        type = content.Type.ARRAY,
-                        items = content.Schema(
-                            type = content.Type.STRING,
-                        ),
-                        ),
-                        "contradictions": content.Schema(
-                        type = content.Type.ARRAY,
-                        items = content.Schema(
-                            type = content.Type.STRING,
-                        ),
-                        ),
-                    },
-                    ),
-                    "source_assessment": content.Schema(
-                    type = content.Type.ARRAY,
-                    items = content.Schema(
-                        type = content.Type.OBJECT,
-                        required = ["url", "credibility_metrics", "relevance_to_claim"],
-                        properties = {
-                        "url": content.Schema(
-                            type = content.Type.STRING,
-                        ),
-                        "credibility_metrics": content.Schema(
-                            type = content.Type.OBJECT,
-                            required = ["credibility_score", "bias_rating", "fact_checking_history"],
-                            properties = {
-                            "credibility_score": content.Schema(
-                                type = content.Type.NUMBER,
-                            ),
-                            "bias_rating": content.Schema(
-                                type = content.Type.STRING,
-                            ),
-                            "fact_checking_history": content.Schema(
-                                type = content.Type.NUMBER,
-                            ),
-                            },
-                        ),
-                        "relevance_to_claim": content.Schema(
-                            type = content.Type.NUMBER,
-                        ),
-                        },
-                    ),
-                    ),
+                    ),                    
                     "misinformation_impact": content.Schema(
                     type = content.Type.OBJECT,
                     required = ["severity", "affected_domains", "potential_consequences", "spread_risk"],
@@ -152,64 +96,8 @@ class FactChecker:
                         ),
                     },
                     ),
-                    "correction_suggestions": content.Schema(
-                    type = content.Type.OBJECT,
-                    required = ["verified_facts", "recommended_sources", "context_missing"],
-                    properties = {
-                        "verified_facts": content.Schema(
-                        type = content.Type.ARRAY,
-                        items = content.Schema(
-                            type = content.Type.STRING,
-                        ),
-                        ),
-                        "recommended_sources": content.Schema(
-                        type = content.Type.ARRAY,
-                        items = content.Schema(
-                            type = content.Type.OBJECT,
-                            properties = {
-                            "url": content.Schema(
-                                type = content.Type.STRING,
-                            ),
-                            "credibility_score": content.Schema(
-                                type = content.Type.NUMBER,
-                            ),
-                            "relevance": content.Schema(
-                                type = content.Type.NUMBER,
-                            ),
-                            },
-                        ),
-                        ),
-                        "context_missing": content.Schema(
-                        type = content.Type.ARRAY,
-                        items = content.Schema(
-                            type = content.Type.STRING,
-                        ),
-                        ),
-                    },
-                    ),
                 },
                 ),
-            ),
-            "meta_analysis": content.Schema(
-                type = content.Type.OBJECT,
-                required = ["information_ecosystem_impact", "recommended_actions", "prevention_strategies"],
-                properties = {
-                "information_ecosystem_impact": content.Schema(
-                    type = content.Type.STRING,
-                ),
-                "recommended_actions": content.Schema(
-                    type = content.Type.ARRAY,
-                    items = content.Schema(
-                    type = content.Type.STRING,
-                    ),
-                ),
-                "prevention_strategies": content.Schema(
-                    type = content.Type.ARRAY,
-                    items = content.Schema(
-                    type = content.Type.STRING,
-                    ),
-                ),
-                },
             ),
             },
         ),
@@ -258,9 +146,11 @@ class FactChecker:
         }
 
 
+        #############################################################
         self.client = Groq(api_key=groq_api_key)
         self.search_client = SerperEvidenceRetriever(api_key=serper_api_key)
         
+        #############################################################
         self.gemini_client = genai.GenerativeModel(
             model_name="gemini-1.5-flash",
             generation_config=generation_config,
@@ -268,7 +158,8 @@ class FactChecker:
         self.gemini_chat = self.gemini_client.start_chat(
             history=[]
         )
-
+        
+        #############################################################
         self.source_correction = genai.GenerativeModel(
             model_name="gemini-1.5-flash",
             generation_config=generation_config_sources,
@@ -276,57 +167,7 @@ class FactChecker:
         self.gemini_chat_sources = self.source_correction.start_chat(
             history=[]
         )
-        
-    def extract_claims(self, news_text: str) -> List[str]:
-        prompt = {
-            "role": "user",
-            "content": f"Break the following news into atomic claims. Make a maximum of 3 claims, not more at all. Return as JSON array of claim statements:\n\n{news_text}"
-        }
-        
-        response = self.client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[prompt],
-            temperature=0.2,
-            response_format={"type": "json_object"}
-        )
-
-        gemini_extract_prompt = f"Break the following news into atomic claims. Make a maximum of 3 claims, not more at all. Return as JSON array of claim statements:\n\n{news_text}"
-
-        generation_config_extract = {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": 40,
-        "max_output_tokens": 8192,
-        "response_schema": content.Schema(
-            type = content.Type.OBJECT,
-            enum = [],
-            required = ["claims"],
-            properties = {
-            "claims": content.Schema(
-                type = content.Type.ARRAY,
-                items = content.Schema(
-                type = content.Type.STRING,
-                ),
-            ),
-            },
-        ),
-        "response_mime_type": "application/json",
-        }
-
-        model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
-        generation_config=generation_config_extract,
-        )
-
-        chat_session = model.start_chat(
-        history=[
-        ]
-        )
-
-        response = chat_session.send_message(gemini_extract_prompt)
-
-        return json.loads(response.text)
-
+    
     def generate_verification_questions(self, claim: str) -> List[str]:
         prompt = {
             "role": "user",
@@ -364,8 +205,8 @@ class FactChecker:
         }
 
         model_questions = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
-        generation_config=generation_config_questions,
+            model_name="gemini-1.5-flash",
+            generation_config=generation_config_questions,
         )
 
         chat_session_questions = model_questions.start_chat(
@@ -381,102 +222,8 @@ class FactChecker:
     def search_evidence(self, query: str) -> List[Dict]:
         return self.search_client.retrieve_evidence(query)
 
-    def analyze_claim(self, claim: str) -> Claim:
-        # Generate verification questions
-        questions = self.generate_verification_questions(claim=claim)["questions"]
-
-        claim_queries_dict = {claim: [q for q in questions]}
-
-        evidence_dict = self.search_client.retrieve_evidence(claim_queries_dict=claim_queries_dict)
-        
-        # Collect evidence for each question
-        evidences = []
-        sources = []
-        
-        for claim, evidence in evidence_dict.items():
-            for evidence_item in evidence:
-                evidences.append(evidence_item['text'])
-                sources.append(evidence_item['url'])
-        
-        # # Analyze evidence using Groq
-        # analysis_prompt = {
-        #     "role": "user",
-        #     "content": f"Analyze this claim and evidence. Return JSON with confidence_score (1-100), verified_status (True/False/Partially True/Unverifiable), and worthiness_score (1-10):\n\nClaim: {claim}\n\nEvidence: {json.dumps(evidence)}"
-        # }
-        
-        # analysis = self.client.chat.completions.create(
-        #     model="llama-3.3-70b-versatile",
-        #     messages=[analysis_prompt],
-        #     temperature=0.2,
-        #     response_format={"type": "json_object"}
-        # )
-
-        # result = json.loads(analysis.choices[0].message.content)
-        
-        gemini_analysis_prompt = f"Analyze this claim and evidence. Return JSON with confidence_score - integer - from 1-100, verified_status - an integer in the range 0-100, and worthiness_score, an integer ranging from 1-100:\n\nClaim: {claim}\n\nEvidence: {json.dumps(evidence)}"
-
-        generation_config_analysis = {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": 40,
-        "max_output_tokens": 8192,
-        "response_schema": content.Schema(
-            type = content.Type.OBJECT,
-            enum = [],
-            required = ["confidence_score", "verified_status", "worthiness_score"],
-            properties = {
-            "confidence_score": content.Schema(
-                type = content.Type.INTEGER,
-            ),
-            "verified_status": content.Schema(
-                type = content.Type.INTEGER,
-            ),
-            "worthiness_score": content.Schema(
-                type = content.Type.INTEGER,
-            ),
-            },
-        ),
-        "response_mime_type": "application/json",
-        }
-
-        model_analysis = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
-        generation_config=generation_config_analysis,
-        )
-
-        chat_session_analysis = model_analysis.start_chat(
-        history=[
-        ]
-        )
-
-        response = chat_session_analysis.send_message(gemini_analysis_prompt)
-
-        result = json.loads(response.text)
-
-        return Claim(
-            statement=claim,
-            confidence_score=result["confidence_score"],
-            verified_status=result["verified_status"],
-            key_evidence=evidence,
-            sources=sources,
-            worthiness_score=result["worthiness_score"]
-        )
-
-    def generate_report(self, news_text: str) -> Dict:
-        claims = self.extract_claims(news_text)
-        analyzed_claims = []
-        # for claim in claims:
-        #     cl = ""
-        #     if type(claim) == str:
-        #         cl = claim
-        #     else:
-        #         for tup in claim.items():
-        #             cl += tup[1] + " "
-        #     analyzed_claims.append(self.analyze_claim(claim=cl))
-
-        for claim in claims["claims"]:
-            analyzed_claims.append(self.analyze_claim(claim=claim))
-
+    def generate_report(self, news_summ: str) -> Dict:
+        ### FUTURE PROSPECT ###
         # # Source credibility analysis
         # source_ratings = {}
         # for claim in analyzed_claims:
@@ -496,37 +243,59 @@ class FactChecker:
 
         # #sleep for one minute
         # time.sleep(60)
-
-        report_prompt = f"""Generate a comprehensive fact-check analysis report for the following claims and evidence. Structure your analysis according to these sections:
+        ### FUTURE PROSPECT ###
+        
+        verif_ques = self.generate_verification_questions(news_summ)["questions"]
+        
+        # retrieve evidences for each question from the search client
+        claim_queries_dict = {news_summ: [q for q in verif_ques]}
+        
+        evidence_dict = self.search_client.retrieve_evidence(claim_queries_dict=claim_queries_dict)
+        
+        # Collect evidence for each question
+        evidences = []
+        sources = []
+        for claim, evidence in evidence_dict.items():
+            for evidence_item in evidence:
+                ev_news = get_news(evidence_item['url'])
+                if (ev_news["status"] == "success"):
+                    evidences.append(ev_news["summary"])
+                    sources.append(evidence_item['url'])
+        
+        # #update the prompt to generate the fact check report based on the verif_ques and evidences retrieved
+        report_prompt = f"""Generate a comprehensive fact-check analysis report for this news claim and supporting evidence. Structure your analysis according to these sections:
 
         1. Overall Analysis:
-        - Calculate an aggregate truth score (0-100) based on all claims
-        - Provide a detailed reliability assessment explaining major patterns
-        - List key findings that emerge from analyzing all claims together
-        - Identify recurring patterns in misinformation/disinformation if any
+        - Calculate a truth score (0-100) based on evidence verification
+        - Provide a detailed reliability assessment of the claim
+        - List key findings from cross-referencing evidence
+        - Identify any patterns of inaccuracy or misrepresentation
 
-        2. Claim-by-Claim Analysis:
-        For each claim in: {json.dumps([vars(claim) for claim in analyzed_claims])}
-        - Evaluate verification status with specific reasoning
-        - Assign confidence level based on evidence strength
-        - Analyze evidence quality:
-        * Evaluate evidence strength
-        * Identify information gaps
-        * Note any contradictions in sources
-        - Assess sources:
-        * Evaluate credibility metrics
-        * Check for bias patterns
-        * Review fact-checking history
+        2. Evidence Analysis for Claim: {news_summ}
+        Evidence Sources:
+        {json.dumps(evidences)}
+
+        Analyze:
+        - Verification status with specific reasoning
+        - Confidence level based on evidence strength
+        - Evidence quality assessment:
+        * Evidence strength rating
+        * Information gaps identified
+        * Any contradictions between sources
+        - Source evaluation:
+        * Credibility metrics
+        * Bias patterns
+        * Fact-checking history
 
         3. Meta Analysis:
-        - Assess potential impact on information ecosystem
-        - Suggest specific actions for correction/prevention
-        - Recommend strategies to prevent spread of misinformation
+        - Assess potential impact on public understanding
+        - Suggest specific correction actions if needed
+        - Recommend prevention strategies for misinformation
 
-        Please be specific and provide numerical scores where applicable. Include direct quotes from evidence when relevant.
+        Please provide numerical scores where applicable and cite specific evidence examples to support your analysis.
         """
 
-
+        ### FUTURE PROSPECT ###
         # Source Ratings: {json.dumps(source_ratings)}
         # Get additional correction sources for misinfo claims
         # correction_sources = {}
@@ -535,15 +304,17 @@ class FactChecker:
         #         correction_query = f"fact check {claim.statement} reliable sources"
         #         correction_results = self.search_client.retrieve_evidence({claim.statement: [correction_query]})
         #         correction_sources[claim.statement] = correction_results
+        ### FUTURE PROSPECT ###
             
         enhanced_report = self.gemini_client.generate_content(report_prompt)
 
         report_content = json.loads(enhanced_report.text)
-            # "source_credibility": source_ratings,
         
         return {
             "timestamp": datetime.now().isoformat(),
-            "original_text": news_text,
+            "original_text": news_summ,
             "detailed_analysis": report_content,
         }
+            ### FUTURE PROSPECT ###
             # "correction_sources": correction_sources
+            ### FUTURE PROSPECT ###
