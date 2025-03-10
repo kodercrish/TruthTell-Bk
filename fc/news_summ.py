@@ -3,7 +3,7 @@ import nltk
 import os
 
 
-nltk_data_dir = "nexus-backend/nltk_data"
+nltk_data_dir = "nltk_data"
 nltk.data.path.insert(0, nltk_data_dir)
 
 print(f"Looking for nltk data in: {nltk_data_dir}")

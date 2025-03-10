@@ -22,17 +22,16 @@ pusher_client = pusher.Pusher(
 )
 
 async def fetch_and_broadcast_news():
-    print("Fetching and broadcasting news...")
-    try:
-        
-        news_data = news_fetcher.fetch_and_produce()
-        
-        print(news_data["status"])
-        print(news_data["content"]["id"])
+    try:       
+        news_data = news_fetcher.process_single_news()
 
-        if news_data["status"] == "success" and news_data["content"]["id"]:
+        if news_data["status"] == "refresh":
+            pusher_client.trigger('news-channel', 'refresh-news', {
+                'message': 'Refreshing news database'
+            })
+        elif news_data["status"] == "success":
             pusher_client.trigger('news-channel', 'fact-check', news_data["content"])
-            print(f"Successfully broadcasted article: {news_data['content']}")
+            
     except Exception as e:
         print(f"Error in fetch_and_broadcast_news: {e}")
 
@@ -40,10 +39,13 @@ scheduler = AsyncIOScheduler()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    scheduler.add_job(fetch_and_broadcast_news, 'interval', minutes=1)
-    print("Scheduler started. Job Added.")
+    news_docs = news_fetcher.db_service.news_ref.limit(1).get()
+    
+    if len(list(news_docs)) == 0:
+        news_fetcher.fetch_initial_news()
+    
+    scheduler.add_job(fetch_and_broadcast_news, 'interval', seconds=30)
     await fetch_and_broadcast_news()
-    print("First time")
     scheduler.start()
     yield
     scheduler.shutdown()
@@ -61,6 +63,7 @@ app.add_middleware(
 
 app.include_router(news_router, tags=["News"])
 app.include_router(input_router, tags=["User Inputs"])
+
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the API"}

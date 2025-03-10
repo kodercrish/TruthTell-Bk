@@ -1,7 +1,6 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter
 from dotenv import load_dotenv
-from fc.newsfetcher import NewsFetcher
-import asyncio
+from db.database_service import DatabaseService
 
 from pydantic import BaseModel
 
@@ -15,24 +14,11 @@ load_dotenv()
 
 news_router = APIRouter()
 
-@news_router.websocket("/ws/news")
-async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-
-    while True:
-        try:
-            news_fetcher = NewsFetcher()
-            news_data = await news_fetcher.fetch_and_produce()
-            
-            if news_data["status"] == "success":
-                print("INFO::  Sending news data...")
-                await websocket.send_json(news_data)
-            
-            # Wait for 1 minutes before fetching new data
-            await asyncio.sleep(150)
-            
-        except WebSocketDisconnect:
-            break
-        except Exception as e:
-            error_message = {"status": "error", "message": str(e)}
-            await websocket.send_json(error_message)
+@news_router.get("/all-news")
+async def get_all_news():
+    db_service = DatabaseService()
+    news_with_factchecks = db_service.get_all_news_with_factchecks()
+    return {
+        "status": "success",
+        "content": news_with_factchecks
+    }
