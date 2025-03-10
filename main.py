@@ -40,7 +40,7 @@ scheduler = AsyncIOScheduler()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    scheduler.add_job(fetch_and_broadcast_news, 'interval', minutes=3)
+    scheduler.add_job(fetch_and_broadcast_news, 'interval', minutes=1)
     print("Scheduler started. Job Added.")
     await fetch_and_broadcast_news()
     print("First time")
