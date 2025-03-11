@@ -62,3 +62,10 @@ class DatabaseService:
         ]
         
         return result
+    def store_user_broadcast(self, user_data: Dict):
+        doc_ref = self.db.collection('user_broadcast').document()
+        return doc_ref.set(user_data), doc_ref.id
+
+    def get_all_user_broadcasts(self):
+        user_docs = self.db.collection('user_broadcast').get()
+        return [doc.to_dict() | {'id': doc.id} for doc in user_docs]

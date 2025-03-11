@@ -6,21 +6,13 @@ from routes.user_inputs import input_router
 import nest_asyncio
 nest_asyncio.apply()
 from fc.newsfetcher import NewsFetcher
-from pusher import pusher
 import os
 from contextlib import asynccontextmanager
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from routes.video_analysis import video_router
+from pusher_api import pusher_client
 
 news_fetcher = NewsFetcher()
-
-pusher_client = pusher.Pusher(
-    app_id=os.getenv('PUSHER_APP_ID'),
-    key=os.getenv('PUSHER_KEY'),
-    secret=os.getenv('PUSHER_SECRET'),
-    cluster=os.getenv('PUSHER_CLUSTER'),
-    ssl=True
-)
 
 async def fetch_and_broadcast_news():
     try:       
