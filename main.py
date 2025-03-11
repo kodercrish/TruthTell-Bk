@@ -41,12 +41,12 @@ scheduler = AsyncIOScheduler()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     news_docs = news_fetcher.db_service.news_ref.limit(1).get()
-    
+
     if len(list(news_docs)) == 0:
         news_fetcher.fetch_initial_news()
     
     scheduler.add_job(fetch_and_broadcast_news, 'interval', seconds=30)
-    await fetch_and_broadcast_news()
+    # await fetch_and_broadcast_news()
     scheduler.start()
     yield
     scheduler.shutdown()
