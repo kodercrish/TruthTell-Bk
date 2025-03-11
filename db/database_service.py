@@ -37,30 +37,8 @@ class DatabaseService:
     #     return result
 
     def get_all_news_with_factchecks(self):
-    # Get all news documents in one batch
-        news_docs = self.news_ref.get()
-        
-        # Prepare batch get for factchecks
-        factcheck_refs = [self.factcheck_ref.document(doc.id) for doc in news_docs]
-        factcheck_snapshots = self.db.get_all(factcheck_refs)
-        
-        # Create factcheck lookup dict
-        factcheck_dict = {
-            snap.id: snap.to_dict() 
-            for snap in factcheck_snapshots 
-            if snap.exists
-        }
-        
-        # Combine news with factchecks
-        result = [
-            {
-                **doc.to_dict(),
-                'id': doc.id,
-                'factcheck': factcheck_dict.get(doc.id)
-            }
-            for doc in news_docs
-        ]
-        
+        factcheck_docs = self.factcheck_ref.get()
+        result = [doc.to_dict() | {'id': doc.id} for doc in factcheck_docs]
         return result
     def store_user_broadcast(self, user_data: Dict):
         doc_ref = self.db.collection('user_broadcast').document()

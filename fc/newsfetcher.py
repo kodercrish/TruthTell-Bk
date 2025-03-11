@@ -24,7 +24,6 @@ class NewsFetcher:
         if news['articles']:
             # Store news articles in database with processed=False flag
             processed_articles = [article for article in news['articles']]
-            print(f'Lenght of processed articles: {len(processed_articles)}')
             self.db_service.store_news(processed_articles)
             return True
         return False
@@ -33,7 +32,7 @@ class NewsFetcher:
     def process_single_news(self):
         news = self.db_service.get_unprocessed_news()
 
-        if len(news) == 0:
+        if not news:
             # Pre-fetch new news before clearing database
             new_news = self.newsapi.get_top_headlines(language='en', page=1, page_size=100)
             
@@ -60,14 +59,14 @@ class NewsFetcher:
             
             self.fetch_initial_news()
             return {'status': 'refresh', 'content': 'Refreshing news database'}
-            
+        
         news_text = get_news(news['url'])
-        if news_text['status'] == 'error':
+        if news_text['status'] == 'error' or len(news["summary"]) == 0:
             # remove the news from the database
             self.db_service.news_ref.document(news['id']).delete()
             return { "status": "error", "content": "Error fetching news" }
         
-        fact_check_result = self.fact_checker.generate_report(news_text['summary'])
+        fact_check_result = self.fact_checker.generate_report(news_summ=news_text['summary'])
         
         article_object = {
             "id": str(uuid.uuid4()),
@@ -82,7 +81,6 @@ class NewsFetcher:
         }
 
         self.db_service.store_factcheck(news['id'], article_object)
-        
         return {
             "status": "success",
             "content": article_object,
