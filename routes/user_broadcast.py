@@ -11,6 +11,7 @@ router = APIRouter()
 db_service = DatabaseService()
 
 class UserInput(BaseModel):
+    title: str
     text: str
     name: str
 
@@ -24,6 +25,7 @@ async def create_user_broadcast(user_input: UserInput):
     factcheck_result = fact_checker.generate_report(user_input.text)
     
     broadcast_data = {
+        "title": user_input.title,
         "text": user_input.text,
         "user_name": user_input.name,
         "factcheck": factcheck_result,
