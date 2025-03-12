@@ -112,7 +112,7 @@ class FactChecker:
         "response_schema": content.Schema(
             type = content.Type.OBJECT,
             enum = [],
-            required = ["credibility_score", "fact_checking_history", "transparency_score", "expertise_level", "brief_explanation"],
+            required = ["credibility_score", "fact_checking_history", "transparency_score", "expertise_level"],
             properties = {
             "credibility_score": content.Schema(
                 type = content.Type.INTEGER,
@@ -125,9 +125,6 @@ class FactChecker:
             ),
             "expertise_level": content.Schema(
                 type = content.Type.INTEGER,
-            ),
-            "brief_explanation": content.Schema(
-                type = content.Type.STRING,
             ),
             "additional_metrics": content.Schema(
                 type = content.Type.OBJECT,
@@ -309,11 +306,12 @@ class FactChecker:
         enhanced_report = self.gemini_client.generate_content(report_prompt)
 
         report_content = json.loads(enhanced_report.text)
-        
+        print
         return {
             "timestamp": datetime.now().isoformat(),
             "original_text": news_summ,
             "detailed_analysis": report_content,
+            "sources": sources[:5]
         }
             ### FUTURE PROSPECT ###
             # "correction_sources": correction_sources

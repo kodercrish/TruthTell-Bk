@@ -31,12 +31,15 @@ class NewsFetcher:
         
     def process_single_news(self):
         news = self.db_service.get_unprocessed_news()
+        print("Got news")
 
         if not news:
+            print("No news to process")
             # Pre-fetch new news before clearing database
             new_news = self.newsapi.get_top_headlines(language='en', page=1, page_size=100)
-            
+            print("Got new news")
             if new_news['articles']:
+                print("Storing new news")
                 # Start batch operations
                 batch = self.db_service.db.batch()
                 
@@ -53,15 +56,17 @@ class NewsFetcher:
                 
                 # Store new news
                 self.db_service.store_news(new_news['articles'])
-                
+                print("Stored new news")
                 # Process first new article immediately
                 return self.process_single_news()
             
             self.fetch_initial_news()
+            print("No news to process, refreshing news database")
             return {'status': 'refresh', 'content': 'Refreshing news database'}
         
         news_text = get_news(news['url'])
-        if news_text['status'] == 'error' or len(news["summary"]) == 0:
+        print("Got news text")
+        if news_text['status'] == 'error' or len(news_text["summary"]) == 0:
             # remove the news from the database
             self.db_service.news_ref.document(news['id']).delete()
             return { "status": "error", "content": "Error fetching news" }
@@ -77,7 +82,8 @@ class NewsFetcher:
                     "overall_analysis" : fact_check_result["detailed_analysis"]["overall_analysis"],
                     "claim_analysis" : fact_check_result["detailed_analysis"]["claim_analysis"]
                 }
-            }
+            },
+            "sources": fact_check_result["sources"]
         }
 
         self.db_service.store_factcheck(news['id'], article_object)

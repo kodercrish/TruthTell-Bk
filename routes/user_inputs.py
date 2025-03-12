@@ -44,9 +44,10 @@ async def get_fc_url(input_data: UrlInput):
                 "fact_check_result": {
                     "detailed_analysis" : {
                         "overall_analysis" : fact_check_result1["detailed_analysis"]["overall_analysis"],
+                        "claim_analysis" : fact_check_result1["detailed_analysis"]["claim_analysis"]
                     }
-                }
-                
+                },
+                "sources": fact_check_result1["sources"]
             }
         }
     except Exception as e:
@@ -62,6 +63,7 @@ async def get_fc_text(input_data: TextInput):
         
         # explanation = explain_factcheck_result(fact_check_result1)
 
+        print(fact_check_result1)
         
         #return an object with fact check result and visualization data, and explanation
         return {
@@ -70,9 +72,10 @@ async def get_fc_text(input_data: TextInput):
                 "fact_check_result": {
                     "detailed_analysis" : {
                         "overall_analysis" : fact_check_result1["detailed_analysis"]["overall_analysis"],
+                        "claim_analysis" : fact_check_result1["detailed_analysis"]["claim_analysis"]
                     }
-                }
-                
+                },
+                "sources": fact_check_result1["sources"]
             }
         }
     except Exception as e:

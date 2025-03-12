@@ -17,7 +17,6 @@ def get_news(url):
             'status': 'success',
             'summary': article.summary,
             'title': article.title,
-            'text': article.text,
             'url': url
         }
     except Exception as e:
