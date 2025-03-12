@@ -20,7 +20,7 @@ async def analyze_video_endpoint(file: UploadFile = File(...)):
         video = genai.get_file(video.name)
     
     model = genai.GenerativeModel('gemini-1.5-flash')
-    prompt = "Analyze the speech in this video and detect if it contains misinformation or bias. Summarize key points."
+    prompt = "Analyze the speech in this video and detect if it contains misinformation or bias. First state if the content is real or fake. Then give a short summary regarding the speech. Then Summarize key points."
     response = model.generate_content([prompt, video])
     
     os.remove(temp_file_path)  # Clean up temp file

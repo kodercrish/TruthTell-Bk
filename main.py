@@ -9,9 +9,11 @@ from fc.newsfetcher import NewsFetcher
 import os
 from contextlib import asynccontextmanager
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from routes.video_analysis import video_router
 from routes.user_broadcast import router
 from pusher_api import pusher_client
+from routes.video_analysis import video_router
+from routes.image_analysis import image_router
+from routes.audio_analysis import audio_router
 
 news_fetcher = NewsFetcher()
 
@@ -59,8 +61,10 @@ app.add_middleware(
 
 app.include_router(news_router, tags=["News"])
 app.include_router(input_router, tags=["User Inputs"])
-app.include_router(video_router, tags=["Video Analysis"])
 app.include_router(router, tags=["User Broadcast"])
+app.include_router(video_router, tags=["Video Analysis"])
+app.include_router(image_router, tags=["Image Analysis"])
+app.include_router(audio_router, tags=["Audio Analysis"])
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the API"}
