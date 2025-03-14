@@ -79,7 +79,7 @@ regex==2024.11.6
 requests==2.32.3
 requests-file==2.1.0
 rsa==4.9
-scikit-learn==1.6.1
+scikit-learn==1.5.2
 scipy==1.15.2
 sgmllib3k==1.0.0
 six==1.17.0
