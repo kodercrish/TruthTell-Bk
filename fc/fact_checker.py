@@ -12,6 +12,8 @@ from .serper_search import SerperEvidenceRetriever
 from google.ai.generativelanguage_v1beta.types import content
 import time
 from routes.news_summ import get_news
+from urllib.parse import urlparse
+
 
 dotenv.load_dotenv()
 
@@ -110,8 +112,9 @@ class FactChecker:
         "top_k": 40,
         "max_output_tokens": 8192,
         "response_schema": content.Schema(
+            type = content.Type.ARRAY,
+            items = content.Schema(
             type = content.Type.OBJECT,
-            enum = [],
             required = ["credibility_score", "fact_checking_history", "transparency_score", "expertise_level"],
             properties = {
             "credibility_score": content.Schema(
@@ -137,7 +140,7 @@ class FactChecker:
                 ),
                 },
             ),
-            },
+            }),
         ),
         "response_mime_type": "application/json",
         }
@@ -218,6 +221,62 @@ class FactChecker:
 
     def search_evidence(self, query: str) -> List[Dict]:
         return self.search_client.retrieve_evidence(query)
+
+    def analyze_source_credibility(self, sources):
+        """
+        Analyze the credibility of news sources using Gemini
+        
+        Args:
+            sources: List of source URLs to analyze
+            
+        Returns:
+            Dictionary containing source credibility analysis
+        """
+        if not sources:
+            return []
+        
+        # Extract domain names from URLs for better analysis
+        domains = [urlparse(source).netloc for source in sources]
+        
+        # Create a prompt that asks Gemini to evaluate the sources
+        source_analysis_prompt = f"""
+        Analyze the credibility of these news sources:
+        
+        {json.dumps(domains)}
+        
+        For each source, evaluate:
+        1. Credibility score (1-100)
+        2. Fact-checking history (1-100)
+        3. Transparency score (1-100)
+        4. Expertise level (1-100)
+        
+        Also include these additional metrics:
+        - Citation score (1-100)
+        - Peer recognition (1-100)
+        
+        Return the analysis as a structured JSON array with one object per source.
+        """
+        
+        # Use the gemini_chat_sources which has the appropriate schema configuration
+        response = self.gemini_chat_sources.send_message(source_analysis_prompt)
+        
+        try:
+            source_ratings = json.loads(response.text)
+            print("Source ratings:")
+            print(source_ratings)
+            
+            # Map the domain analysis back to the original URLs
+            result = []
+            for i, url in enumerate(sources):
+                if i < len(source_ratings):
+                    rating = source_ratings[i]
+                    rating['url'] = url
+                    result.append(rating)
+            
+            return result
+        except Exception as e:
+            print(f"Error parsing source credibility analysis: {str(e)}")
+            return []
 
     def generate_report(self, news_summ: str) -> Dict:
         ### FUTURE PROSPECT ###
@@ -306,12 +365,13 @@ class FactChecker:
         enhanced_report = self.gemini_client.generate_content(report_prompt)
 
         report_content = json.loads(enhanced_report.text)
-        print
+        source_credibility = self.analyze_source_credibility(sources[:5])  # Analyze top 5 sources
         return {
             "timestamp": datetime.now().isoformat(),
             "original_text": news_summ,
             "detailed_analysis": report_content,
-            "sources": sources[:5]
+            "sources": sources[:5],
+            "source_credibility": source_credibility
         }
             ### FUTURE PROSPECT ###
             # "correction_sources": correction_sources
