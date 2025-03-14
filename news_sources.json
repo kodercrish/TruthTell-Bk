@@ -1,0 +1,2739 @@
+{
+    "status": "success",
+    "totalResults": 86,
+    "results": [
+        {
+            "id": "economictimes_indiatimes",
+            "name": "The Economic Times",
+            "url": "https://economictimes.indiatimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/economictimes_indiatimes.png",
+            "priority": 231,
+            "description": "Business news today: Read India Business news Live. Latest Business news and updates on Finance, share market, IPO, economy. Discover Business News Headlines, Top Financial News and more on The Economic Times",
+            "category": [
+                "environment",
+                "sports",
+                "world",
+                "lifestyle",
+                "science",
+                "technology",
+                "education",
+                "health",
+                "top",
+                "business",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 302623,
+            "last_fetch": "2025-03-14 13:49:56"
+        },
+        {
+            "id": "telecom_economictimes",
+            "name": "ET Telecom",
+            "url": "https://telecom.economictimes.indiatimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/telecom_economictimes.png",
+            "priority": 483,
+            "description": "Find the latest telecom Industry news, online Industry information, views & updates. Get online news from the Indian Telecom Industry on ET Telecom.",
+            "category": [
+                "technology"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 10275,
+            "last_fetch": "2025-03-14 04:45:22"
+        },
+        {
+            "id": "malayalam_news18",
+            "name": "Pravasi Malayalee News",
+            "url": "https://malayalam.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/malayalam_news18.png",
+            "priority": 3892,
+            "description": "Malayalam News Online. Today&s Latest Malayalam News from Kerala, India, Gulf &amp; World. \u0d2e\u0d32\u0d2f\u0d3e\u0d33\u0d02 \u0d35\u0d3e\u0d7c\u0d24\u0d4d\u0d24\u0d15\u0d7e. \u0d07\u0d28\u0d4d\u0d28\u0d24\u0d4d\u0d24\u0d46 \u0d2a\u0d4d\u0d30\u0d27\u0d3e\u0d28 \u0d35\u0d3e\u0d7c\u0d24\u0d4d\u0d24\u0d15\u0d7e",
+            "category": [
+                "sports",
+                "lifestyle",
+                "world",
+                "technology",
+                "other",
+                "health",
+                "top",
+                "business",
+                "entertainment",
+                "crime",
+                "politics"
+            ],
+            "language": [
+                "spanish",
+                "malayalam"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 27257,
+            "last_fetch": "2025-03-14 13:52:35"
+        },
+        {
+            "id": "google",
+            "name": "Google News",
+            "url": "https://news.google.com",
+            "icon": "https://i.bytvi.com/domain_icons/google.png",
+            "priority": 14,
+            "description": "Comprehensive, up-to-date news coverage, aggregated from sources all over the world by Google News.",
+            "category": [
+                "sports",
+                "science",
+                "technology",
+                "health",
+                "top",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "japanese",
+                "english",
+                "arabic"
+            ],
+            "country": [
+                "united kingdom",
+                "japan",
+                "india",
+                "united arab emirates",
+                "australia",
+                "singapore",
+                "canada",
+                "united states of america",
+                "saudi arabia"
+            ],
+            "total_article": 1905900,
+            "last_fetch": "2025-03-14 13:48:54"
+        },
+        {
+            "id": "espn",
+            "name": "ESPN",
+            "url": "https://www.espn.com",
+            "icon": "https://i.bytvi.com/domain_icons/espn.png",
+            "priority": 341,
+            "description": "Visit ESPN to get up-to-the-minute sports news coverage, scores, highlights, and commentary for cricket, rugby, football, F1, kabaddi, and more.",
+            "category": [
+                "sports",
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "india",
+                "australia",
+                "singapore",
+                "canada",
+                "united states of america"
+            ],
+            "total_article": 35343,
+            "last_fetch": "2025-03-14 12:49:32"
+        },
+        {
+            "id": "foreignpolicy",
+            "name": "Foreign Policy",
+            "url": "https://foreignpolicy.com",
+            "icon": "https://i.bytvi.com/domain_icons/foreignpolicy.jpg",
+            "priority": 3984,
+            "description": "The Global Magazine of News and Ideas.",
+            "category": [
+                "world",
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "taiwan",
+                "syria",
+                "qatar",
+                "niger",
+                "malaysia",
+                "lebanon",
+                "south africa",
+                "costa rica",
+                "timor-leste",
+                "seychelles",
+                "ghana",
+                "laos",
+                "mali",
+                "venezuela",
+                "uganda",
+                "haiti",
+                "mexico",
+                "iran",
+                "macau",
+                "botswana",
+                "cape verde",
+                "grenada",
+                "kazakhstan",
+                "nicaragua",
+                "india",
+                "cyprus",
+                "azerbaijan",
+                "congo",
+                "turkey",
+                "sierra leone",
+                "dr congo",
+                "tanzania",
+                "guyana",
+                "united arab emirates",
+                "oman",
+                "hong kong",
+                "china",
+                "vietnam",
+                "turkmenistan",
+                "cambodia",
+                "dominican republic",
+                "malawi",
+                "bangladesh",
+                "libya",
+                "world",
+                "jamaica",
+                "south korea",
+                "chile",
+                "dominica",
+                "senegal",
+                "guatemala",
+                "el salvador",
+                "pakistan",
+                "lesotho",
+                "tajikistan",
+                "saint lucia",
+                "zambia",
+                "ecuador",
+                "thailand",
+                "maldives",
+                "cameroon",
+                "bolivia",
+                "zimbabwe",
+                "mauritius",
+                "eritrea",
+                "kuwait",
+                "barbados",
+                "georgia",
+                "israel",
+                "singapore",
+                "bahrain",
+                "ivory coast",
+                "brunei",
+                "liberia",
+                "burundi",
+                "central african republic",
+                "afghanistan",
+                "djibouti",
+                "gabon",
+                "algeria",
+                "philippines",
+                "mongolia",
+                "rwanda",
+                "namibia",
+                "honduras",
+                "bhutan",
+                "uruguay",
+                "saudi arabia",
+                "jordan",
+                "gambia",
+                "iraq",
+                "nigeria",
+                "peru",
+                "yemen",
+                "burkina fasco",
+                "paraguay",
+                "kyrgyzstan",
+                "mozambique",
+                "mauritania",
+                "tunisia",
+                "madagascar",
+                "united states of america",
+                "morocco",
+                "belize",
+                "kenya",
+                "bahamas",
+                "panama",
+                "nepal",
+                "benin",
+                "north korea",
+                "sri lanka",
+                "trinidad and tobago",
+                "colombia",
+                "cuba",
+                "sudan",
+                "canada",
+                "guinea",
+                "uzbekistan",
+                "armenia",
+                "equatorial guinea",
+                "ethiopia",
+                "togo",
+                "myanmar",
+                "chad",
+                "angola",
+                "somalia",
+                "brazil",
+                "japan",
+                "argentina",
+                "suriname",
+                "indonesia"
+            ],
+            "total_article": 579,
+            "last_fetch": "2025-03-14 12:51:03"
+        },
+        {
+            "id": "bangla_asianetnews",
+            "name": "Asianet News Bangla",
+            "url": "https://bangla.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/bangla_asianetnews.png",
+            "priority": 7805,
+            "description": "Bangla News (\u09ac\u09be\u0982\u09b2\u09be \u0996\u09ac\u09b0): Asianet News Bangla brings you latest Bengali News, India News in Bengali, Top Bangla News Headlines, Bangla Khobar, Breaking News from Kolkata, India, World, Politics, Sports and more in Bengali language. \u09ac\u09be\u0982\u09b2\u09be\u09b0 \u0986\u099c\u0995\u09c7\u09b0 \u09b8\u09b0\u09cd\u09ac\u09b6\u09c7\u09b7 \u09ac\u09cd\u09b0\u09c7\u0995\u09bf\u0982 \u09a8\u09bf\u0989\u099c \u09aa\u09a1\u09bc\u09c1\u09a8\u0964\u09a8\u0964",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "bengali"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 21197,
+            "last_fetch": "2025-03-14 13:36:55"
+        },
+        {
+            "id": "financialtimes",
+            "name": "Financial Times",
+            "url": "https://www.ft.com",
+            "icon": "https://i.bytvi.com/domain_icons/financialtimes.jpg",
+            "priority": 2026,
+            "description": "News, analysis, and comment from the Financial Times, the world's leading global business publication.",
+            "category": [
+                "environment",
+                "world",
+                "technology",
+                "top",
+                "business",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "taiwan",
+                "syria",
+                "malawi",
+                "malaysia",
+                "tunisia",
+                "libya",
+                "lebanon",
+                "costa rica",
+                "united states of america",
+                "morocco",
+                "afghanistan",
+                "south korea",
+                "algeria",
+                "chile",
+                "panama",
+                "united kingdom",
+                "egypt",
+                "philippines",
+                "guatemala",
+                "north korea",
+                "venezuela",
+                "mexico",
+                "iran",
+                "colombia",
+                "ecuador",
+                "thailand",
+                "cuba",
+                "nicaragua",
+                "india",
+                "canada",
+                "uruguay",
+                "azerbaijan",
+                "armenia",
+                "turkey",
+                "bolivia",
+                "iraq",
+                "myanmar",
+                "nigeria",
+                "zimbabwe",
+                "chad",
+                "somalia",
+                "peru",
+                "japan",
+                "brazil",
+                "israel",
+                "argentina",
+                "singapore",
+                "indonesia",
+                "china",
+                "paraguay"
+            ],
+            "total_article": 36201,
+            "last_fetch": "2025-03-14 13:21:05"
+        },
+        {
+            "id": "theguardian",
+            "name": "The Guardian",
+            "url": "https://www.theguardian.com",
+            "icon": "https://i.bytvi.com/domain_icons/theguardian.jpg",
+            "priority": 106,
+            "description": "Latest international news, sport, and comment from the Guardian.",
+            "category": [
+                "technology",
+                "tourism",
+                "health",
+                "sports",
+                "top",
+                "science",
+                "environment",
+                "politics",
+                "food",
+                "business",
+                "entertainment",
+                "world"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "singapore",
+                "canada",
+                "united states of america",
+                "australia",
+                "india"
+            ],
+            "total_article": 113248,
+            "last_fetch": "2025-03-14 13:50:39"
+        },
+        {
+            "id": "outlookindia",
+            "name": "OUTLOOK",
+            "url": "https://www.outlookindia.com",
+            "icon": "https://i.bytvi.com/domain_icons/outlookindia.jpg",
+            "priority": 1033,
+            "description": "Outlook covers the latest India news, analysis, business news and long-form stories on culture, money market and personal finance. Read India's best online magazine.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 71373,
+            "last_fetch": "2025-02-12 14:22:07"
+        },
+        {
+            "id": "prokerala",
+            "name": "Prokerala",
+            "url": "https://www.prokerala.com",
+            "icon": "https://i.bytvi.com/domain_icons/prokerala.png",
+            "priority": 4495,
+            "description": "Prokerala - Health, Ayurveda, Travel, Astrology, Ringtones, News",
+            "category": [
+                "lifestyle",
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 24,
+            "last_fetch": "2025-03-12 22:03:30"
+        },
+        {
+            "id": "vogue",
+            "name": "Vogue",
+            "url": "https://www.vogue.com",
+            "icon": null,
+            "priority": 2736,
+            "description": "VOGUE India is the one-stop destination for women's fashion, beauty, lifestyle and entertainment content. Get fashion &amp; beauty tips from experts, and celeb-inspiration for looks, home decor, and more.",
+            "category": [
+                "entertainment"
+            ],
+            "language": [
+                "portuguese",
+                "spanish",
+                "english",
+                "traditional chinese",
+                "italian",
+                "japanese",
+                "german",
+                "french",
+                "korean"
+            ],
+            "country": [
+                "taiwan",
+                "germany",
+                "united kingdom",
+                "brazil",
+                "france",
+                "italy",
+                "india",
+                "japan",
+                "spain",
+                "singapore",
+                "united states of america",
+                "mexico",
+                "south korea"
+            ],
+            "total_article": 80673,
+            "last_fetch": "2025-03-14 13:49:49"
+        },
+        {
+            "id": "livemint",
+            "name": "MINT",
+            "url": "https://www.livemint.com",
+            "icon": "https://i.bytvi.com/domain_icons/livemint.png",
+            "priority": 7134,
+            "description": "Mint is the clear No.2 among business papers in terms of readership.",
+            "category": [
+                "sports",
+                "science",
+                "technology",
+                "top",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 180187,
+            "last_fetch": "2025-03-14 13:36:02"
+        },
+        {
+            "id": "abplive",
+            "name": "Abp News",
+            "url": "http://abplive.com",
+            "icon": "https://i.bytvi.com/domain_icons/abplive.jpg",
+            "priority": 7754,
+            "description": "ABP LIVE Hindi News: Latest News in Hindi, Hindi News Headlines, Breaking News in Hindi, \u0939\u093f\u0902\u0926\u0940 \u0928\u094d\u092f\u0942\u095b,  \u0924\u093e\u091c\u093e \u0916\u093c\u092c\u0930\u0947\u0902, Hindi Samachar on ABP News. \u0939\u093f\u0902\u0926\u0940 \u0938\u092e\u093e\u091a\u093e\u0930, Latest News in Hindi from India and World on ABP News.",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "science",
+                "technology",
+                "education",
+                "other",
+                "top",
+                "health",
+                "crime",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "gujarati",
+                "punjabi",
+                "bengali",
+                "english",
+                "telugu",
+                "hindi",
+                "marathi",
+                "tamil"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 329896,
+            "last_fetch": "2025-03-14 13:51:24"
+        },
+        {
+            "id": "buzzfeed",
+            "name": "BuzzFeed",
+            "url": "https://www.buzzfeed.com",
+            "icon": "https://i.bytvi.com/domain_icons/buzzfeed.png",
+            "priority": 560,
+            "description": "BuzzFeed has breaking news, vital journalism, quizzes, videos, celeb news, Tasty food videos, recipes, DIY hacks, and all the trending buzz you\u2019ll want to share with your friends. Copyright BuzzFeed, Inc. All rights reserved.",
+            "category": [
+                "other",
+                "top",
+                "business",
+                "entertainment"
+            ],
+            "language": [
+                "spanish",
+                "japanese",
+                "english"
+            ],
+            "country": [
+                "spain",
+                "japan",
+                "india",
+                "united states of america"
+            ],
+            "total_article": 25238,
+            "last_fetch": "2025-03-14 03:00:28"
+        },
+        {
+            "id": "mashable",
+            "name": "Mashable",
+            "url": "https://sea.mashable.com",
+            "icon": "https://i.bytvi.com/domain_icons/mashable.png",
+            "priority": 1294,
+            "description": "Mashable is a global, multi-platform media and entertainment company.",
+            "category": [
+                "technology",
+                "entertainment",
+                "science"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "india",
+                "australia",
+                "singapore",
+                "united states of america"
+            ],
+            "total_article": 15174,
+            "last_fetch": "2025-03-14 11:32:19"
+        },
+        {
+            "id": "toi",
+            "name": "The Times of India",
+            "url": "https://timesofindia.indiatimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/toi.png",
+            "priority": 239,
+            "description": "Top News in India: Read Latest News on Sports, Business, Entertainment, Blogs, and Opinions from leading columnists. Times of India brings the Breaking News and Latest News Headlines from India and around the World.",
+            "category": [
+                "environment",
+                "domestic",
+                "sports",
+                "lifestyle",
+                "world",
+                "science",
+                "food",
+                "education",
+                "technology",
+                "other",
+                "top",
+                "health",
+                "business",
+                "entertainment",
+                "crime",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 542546,
+            "last_fetch": "2025-03-14 13:49:12"
+        },
+        {
+            "id": "mashable_me",
+            "name": "Mashable ME",
+            "url": "https://me.mashable.com",
+            "icon": "https://i.bytvi.com/domain_icons/mashable_me.png",
+            "priority": 1215,
+            "description": "Mashable is a global, multi-platform media and entertainment company.",
+            "category": [
+                "environment",
+                "lifestyle",
+                "science",
+                "technology",
+                "other",
+                "health",
+                "entertainment"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "kyrgyzstan",
+                "syria",
+                "qatar",
+                "mauritania",
+                "tunisia",
+                "libya",
+                "lebanon",
+                "morocco",
+                "afghanistan",
+                "djibouti",
+                "algeria",
+                "egypt",
+                "iran",
+                "pakistan",
+                "tajikistan",
+                "kazakhstan",
+                "india",
+                "sudan",
+                "cyprus",
+                "saudi arabia",
+                "azerbaijan",
+                "uzbekistan",
+                "armenia",
+                "turkey",
+                "ethiopia",
+                "iraq",
+                "jordan",
+                "kuwait",
+                "somalia",
+                "georgia",
+                "israel",
+                "united arab emirates",
+                "oman",
+                "bahrain",
+                "yemen",
+                "turkmenistan"
+            ],
+            "total_article": 8207,
+            "last_fetch": "2025-03-14 13:20:37"
+        },
+        {
+            "id": "yahoo",
+            "name": "Yahoo! News",
+            "url": "https://news.yahoo.com",
+            "icon": "https://i.bytvi.com/domain_icons/yahoo.png",
+            "priority": 17,
+            "description": "The latest news and headlines from Yahoo! News. Get breaking news stories and in-depth coverage with videos and photos.",
+            "category": [
+                "environment",
+                "sports",
+                "world",
+                "science",
+                "top",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "india",
+                "australia",
+                "canada",
+                "united states of america"
+            ],
+            "total_article": 1526533,
+            "last_fetch": "2025-03-14 13:48:25"
+        },
+        {
+            "id": "india",
+            "name": "India",
+            "url": "https://www.india.com",
+            "icon": "https://i.bytvi.com/domain_icons/india.png",
+            "priority": 8067,
+            "description": "India.com brings Breaking News, Live News Updates from across India and the world. India.Com is your gateway to India for Latest News, Explainers, Cricket, Sports, Entertainment, Business, Bollywood, Education, Top Viral, Technology, Celebs, Lifestyle, Health, Travel and more.",
+            "category": [
+                "sports",
+                "lifestyle",
+                "world",
+                "food",
+                "education",
+                "technology",
+                "other",
+                "health",
+                "top",
+                "business",
+                "entertainment"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 34916,
+            "last_fetch": "2025-03-14 13:22:41"
+        },
+        {
+            "id": "business-standard",
+            "name": "Business Standard",
+            "url": "https://www.business-standard.com",
+            "icon": "https://i.bytvi.com/domain_icons/business-standard.png",
+            "priority": 9158,
+            "description": "Business News: Get the latest stock share market news, financial news, economy news, company news, politics news, India news, breaking news, Indian economy news at Business Standard. Catch Nifty Sensex Live updates.",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "science",
+                "technology",
+                "education",
+                "other",
+                "health",
+                "top",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english",
+                "hindi"
+            ],
+            "country": [
+                "world",
+                "united states of america",
+                "india"
+            ],
+            "total_article": 190029,
+            "last_fetch": "2025-03-14 13:23:49"
+        },
+        {
+            "id": "ndtv",
+            "name": "NDTV",
+            "url": "http://www.ndtv.com",
+            "icon": "https://i.bytvi.com/domain_icons/ndtv.png",
+            "priority": 1204,
+            "description": "NDTV.com provides the latest news from India and around the world. Get breaking news alerts from India and follow today\u2019s live news updates in fields of politics, business, technology, Bollywood, cricket, and more.",
+            "category": [
+                "sports",
+                "world",
+                "food",
+                "technology",
+                "top",
+                "entertainment"
+            ],
+            "language": [
+                "english",
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 274799,
+            "last_fetch": "2025-03-14 13:50:01"
+        },
+        {
+            "id": "mirroruk",
+            "name": "Mirror",
+            "url": "https://www.mirror.co.uk",
+            "icon": "https://i.bytvi.com/domain_icons/mirroruk.png",
+            "priority": 910,
+            "description": "Mirror.co.uk is the online edition of The Mirror, one of Britain\u2019s most trusted news brands.",
+            "category": [
+                "environment",
+                "sports",
+                "world",
+                "lifestyle",
+                "science",
+                "food",
+                "technology",
+                "top",
+                "health",
+                "business",
+                "entertainment",
+                "crime",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "austria",
+                "rwanda",
+                "germany",
+                "united kingdom",
+                "iran",
+                "italy",
+                "brazil",
+                "japan",
+                "india",
+                "iceland",
+                "israel",
+                "world",
+                "belgium",
+                "china",
+                "united states of america",
+                "mexico",
+                "iraq"
+            ],
+            "total_article": 267895,
+            "last_fetch": "2025-03-14 13:49:27"
+        },
+        {
+            "id": "sputniknews",
+            "name": "Sputnik News",
+            "url": "https://fr.sputniknews.com",
+            "icon": "https://i.bytvi.com/domain_icons/sputniknews.png",
+            "priority": 4371,
+            "description": "Sputnik est une agence de presse multim\u00e9dia internationale. Retrouvez toutes les derni\u00e8res actualit\u00e9s du jour, information compl\u00e8tes, news et nouvelles mondiales en direct &amp; en continu.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "english",
+                "vietnamese",
+                "french"
+            ],
+            "country": [
+                "france",
+                "india",
+                "vietnam"
+            ],
+            "total_article": 48086,
+            "last_fetch": "2025-03-14 13:51:26"
+        },
+        {
+            "id": "dailymailuk",
+            "name": "Mail Online",
+            "url": "https://www.dailymail.co.uk/home/index.html",
+            "icon": "https://i.bytvi.com/domain_icons/dailymailuk.png",
+            "priority": 135,
+            "description": "MailOnline - get the latest breaking news, showbiz & celebrity photos, sport news & rumours, viral videos and top stories from MailOnline, Daily Mail and Mail on Sunday newspapers.",
+            "category": [
+                "sports",
+                "science",
+                "technology",
+                "tourism",
+                "other",
+                "health",
+                "top",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "taiwan",
+                "sweden",
+                "syria",
+                "qatar",
+                "germany",
+                "tonga",
+                "fiji",
+                "malaysia",
+                "tunisia",
+                "greece",
+                "ukraine",
+                "afghanistan",
+                "finland",
+                "latvia",
+                "romania",
+                "south korea",
+                "hungary",
+                "united kingdom",
+                "france",
+                "egypt",
+                "spain",
+                "belarus",
+                "iran",
+                "mexico",
+                "pakistan",
+                "rwanda",
+                "cuba",
+                "thailand",
+                "kazakhstan",
+                "india",
+                "italy",
+                "sudan",
+                "australia",
+                "canada",
+                "azerbaijan",
+                "armenia",
+                "turkey",
+                "ethiopia",
+                "iraq",
+                "nigeria",
+                "brazil",
+                "japan",
+                "israel",
+                "singapore",
+                "china",
+                "indonesia",
+                "russia"
+            ],
+            "total_article": 456092,
+            "last_fetch": "2025-03-14 13:56:18"
+        },
+        {
+            "id": "9to5mac",
+            "name": "9To5 Mac",
+            "url": "https://9to5mac.com",
+            "icon": "https://i.bytvi.com/domain_icons/9to5mac.png",
+            "priority": 2672,
+            "description": "News and reviews for Apple products, apps, and rumors. We provide breaking coverage for the iPhone, iPad, and all things Mac!",
+            "category": [
+                "technology"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "india",
+                "australia",
+                "singapore",
+                "united states of america"
+            ],
+            "total_article": 24579,
+            "last_fetch": "2025-03-14 13:49:44"
+        },
+        {
+            "id": "moneycontrol",
+            "name": "Moneycontrol",
+            "url": "https://www.moneycontrol.com",
+            "icon": "https://i.bytvi.com/domain_icons/moneycontrol.png",
+            "priority": 1064,
+            "description": "Latest news on Cryptocurrency today, top cryptocurrency prices bitcoin, dogecoin, ethereum. Get details about indian cryptocurrency latest news on current rates and prices.",
+            "category": [
+                "world",
+                "top",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 42518,
+            "last_fetch": "2025-03-14 13:49:17"
+        },
+        {
+            "id": "gadgets360",
+            "name": "Gadgets 360",
+            "url": "https://www.gadgets360.com",
+            "icon": "https://i.bytvi.com/domain_icons/gadgets360.png",
+            "priority": 5369,
+            "description": "Tech News, Latest technology news daily, new best tech gadgets reviews which include mobiles, tablets, laptops, video games. Being a tech news site we cover the latest tech news daily online from India and around the world, reviews, updates on technology today from companies like google, apple, samsung and others also new and upcoming mobiles, cameras, laptops, video games.",
+            "category": [
+                "science",
+                "technology",
+                "top",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 44671,
+            "last_fetch": "2025-03-14 10:50:09"
+        },
+        {
+            "id": "hindi_asianetnews",
+            "name": "Asianet News Hindi",
+            "url": "https://hindi.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/hindi_asianetnews.png",
+            "priority": 7805,
+            "description": "Hindi News (\u0939\u093f\u0928\u094d\u0926\u0940 \u0928\u094d\u092f\u0942\u091c\u093c): Get Latest Breaking News Headlines in Hindi. Exclusive Hindi News on Politics, Business, Bollywood, Technology, Cricket from India & World at Asianet News Hindi. \u0939\u093f\u0902\u0926\u0940 \u092e\u0947\u0902 \u092a\u0922\u093c\u0947\u0902 \u0926\u0947\u0936 \u0914\u0930 \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0924\u093e\u091c\u093e \u0916\u093c\u092c\u0930\u0947\u0902. \u091c\u093e\u0928\u0947 \u0935\u094d\u092f\u093e\u092a\u093e\u0930, \u092e\u0928\u094b\u0930\u0902\u091c\u0928, \u092c\u0949\u0932\u0940\u0935\u0941\u0921, \u0916\u0947\u0932 \u0938\u0941\u0930\u094d\u0916\u093f\u092f\u093e\u0902 \u0914\u0930 \u0930\u093e\u091c\u0928\u0940\u0924\u093f \u0915\u0947 \u0938\u092e\u093e\u091a\u093e\u0930 \u0964 \u0932\u093e\u0907\u0935 \u092c\u094d\u0930\u0947\u0915\u093f\u0902\u0917 \u0928\u094d\u092f\u0942\u091c\u093c \u0964",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 43852,
+            "last_fetch": "2025-03-14 13:22:56"
+        },
+        {
+            "id": "indianexpress",
+            "name": "The Indian Express",
+            "url": "https://indianexpress.com",
+            "icon": "https://i.bytvi.com/domain_icons/indianexpress.png",
+            "priority": 1386,
+            "description": "India News, Latest News - Indian Express provides the latest news today from India and the world. Get all exclusive Breaking News, current headlines, live news, latest news on business, sports, the world, and entertainment with exclusive Opinions and Editorials.",
+            "category": [
+                "sports",
+                "lifestyle",
+                "technology",
+                "education",
+                "other",
+                "top",
+                "health",
+                "business",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "tamil",
+                "english",
+                "malayalam",
+                "gujarati"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 86950,
+            "last_fetch": "2025-03-14 13:49:38"
+        },
+        {
+            "id": "thequint_hindi",
+            "name": "Quint Hindi",
+            "url": "https://hindi.thequint.com",
+            "icon": "https://i.bytvi.com/domain_icons/thequint_hindi.png",
+            "priority": 9980,
+            "description": "Read latest u0915u094bu0930u094bu0928u093e u0935u093eu092fu0930u0938 u0928u094du092fu0942u091cu093c in Hindi. News, analyses and opinion from the world of Politics, Cricket, Technology, Bollywood in Hindi at Quint Hindi",
+            "category": [
+                "top",
+                "politics"
+            ],
+            "language": [
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 10607,
+            "last_fetch": "2025-03-08 04:01:18"
+        },
+        {
+            "id": "thehindu",
+            "name": "The Hindu",
+            "url": "https://www.thehindu.com",
+            "icon": "https://i.bytvi.com/domain_icons/thehindu.png",
+            "priority": 2972,
+            "description": "Today's News Headlines, Breaking News, and latest news from India and World, News from Politics, Sports, Business, Arts and Entertainment.",
+            "category": [
+                "environment",
+                "sports",
+                "lifestyle",
+                "world",
+                "science",
+                "food",
+                "technology",
+                "tourism",
+                "top",
+                "health",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 402478,
+            "last_fetch": "2025-03-14 13:52:36"
+        },
+        {
+            "id": "punjab_news18",
+            "name": "News18 Punjabi News",
+            "url": "https://punjab.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/punjab_news18.jpg",
+            "priority": 3892,
+            "description": "News18 Punjabi News (\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40 \u0a59\u0a2c\u0a30\u0a3e\u0a02) - Get latest and breaking news at leading Punjabi news website. Find top stories related to politics, sports, sandalwood gossips, videos, photo gallery and much more.",
+            "category": [
+                "sports",
+                "lifestyle",
+                "world",
+                "technology",
+                "other",
+                "top",
+                "health",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "spanish",
+                "punjabi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 5619,
+            "last_fetch": "2025-03-14 13:39:33"
+        },
+        {
+            "id": "news18",
+            "name": "NEWS 18",
+            "url": "https://www.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/news18.png",
+            "priority": 1063,
+            "description": "Get the latest news and updates about assembly election result 2022 on Get CNN-News18 live news updates, Candidate, Won State-wise, MLA Seats &amp; Constituency, latest election news, UP, Punjab, Uttarakhand, Goa and Manipur Vidhan Sabha Election result 2022 latest update at News18.com",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "technology",
+                "education",
+                "top",
+                "business",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 295227,
+            "last_fetch": "2025-03-14 13:49:25"
+        },
+        {
+            "id": "telugu_asianetnews",
+            "name": "Asianet News Telugu",
+            "url": "https://telugu.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/telugu_asianetnews.jpg",
+            "priority": 7777,
+            "description": "Telugu News (\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c35\u0c3e\u0c30\u0c4d\u0c24\u0c32\u0c41): Read latest Telugu news Breaking news headlines in Telugu. Check out Today's top stories News updates in Telugu from India and World Politics, Entertainment, Sports, Lifestyle, Health, Telugu Cinema, Technology, Exclusive local News from Andhra Pradesh & Telangana, News Videos online at Asianet News Telugu.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "telugu"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 4,
+            "last_fetch": "2025-03-14 13:37:58"
+        },
+        {
+            "id": "thequint",
+            "name": "The Quint",
+            "url": "https://www.thequint.com",
+            "icon": "https://i.bytvi.com/domain_icons/thequint.png",
+            "priority": 9980,
+            "description": "Latest News, Breaking News LIVE, Top News Headlines, Viral Videos News Updates - The Quint",
+            "category": [
+                "sports",
+                "science",
+                "top",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 20414,
+            "last_fetch": "2025-03-14 11:19:30"
+        },
+        {
+            "id": "frontline_thehindu",
+            "name": "Frontline Thehindu",
+            "url": "https://frontline.thehindu.com",
+            "icon": "https://i.bytvi.com/domain_icons/frontline_thehindu.png",
+            "priority": 1539,
+            "description": "Frontline, the fortnightly English magazine from The Hindu, since 1984. Covering politics, social issues, environment, finance, business, economy, science, technology, art, culture, movies, entertainment, and social media.",
+            "category": [
+                "environment",
+                "science",
+                "education",
+                "tourism",
+                "other",
+                "top",
+                "health",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 3205,
+            "last_fetch": "2025-03-14 12:19:36"
+        },
+        {
+            "id": "hindinews18",
+            "name": "NEWS 18 HINDI",
+            "url": "https://hindi.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/hindinews18.png",
+            "priority": 4077,
+            "description": "Hindi News: Read Breaking News, Live Samachar in Hindi of Business, Sports, India, Education, Bollywood, Watch Live Hindi News TV and more on News18 \u0939\u093f\u0902\u0926\u0940. \u0939\u093f\u0902\u0926\u0940 \u0938\u092e\u093e\u091a\u093e\u0930 \u0915\u0940 \u0932\u094b\u0915\u092a\u094d\u0930\u093f\u092f \u0935\u0947\u092c\u0938\u093e\u0907\u091f \u092a\u0930 \u0926\u0947\u0936, \u0926\u0941\u0928\u093f\u092f\u093e, \u0915\u093e\u0930\u094b\u092c\u093e\u0930, \u0916\u0947\u0932, \u092e\u0928\u094b\u0930\u0902\u091c\u0928 \u0938\u0947 \u091c\u0941\u095c\u0940 \u0938\u093e\u0921\u0940 \u0916\u092c\u0930\u0947\u0902 \u0935\u093f\u0938\u094d\u0924\u093e\u0930 \u092e\u0948\u0902 \u092a\u095d\u0947 - News18 \u0939\u093f\u0902\u0926\u0940",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "food",
+                "technology",
+                "tourism",
+                "other",
+                "health",
+                "top",
+                "business",
+                "crime",
+                "entertainment"
+            ],
+            "language": [
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 299666,
+            "last_fetch": "2025-03-14 13:54:50"
+        },
+        {
+            "id": "kannada_news18",
+            "name": "News18 Kannada",
+            "url": "https://kannada.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/kannada_news18.jpg",
+            "priority": 1089,
+            "description": "Get the latest updates of karnataka news, world news, india news, political News and celebrity news and much more on News18 Kannada",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "science",
+                "food",
+                "technology",
+                "education",
+                "top",
+                "health",
+                "crime",
+                "business",
+                "entertainment"
+            ],
+            "language": [
+                "spanish",
+                "kannada"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 5,
+            "last_fetch": "2025-03-14 13:38:20"
+        },
+        {
+            "id": "timesnownews",
+            "name": "Times Now News",
+            "url": "https://www.timesnownews.com",
+            "icon": "https://i.bytvi.com/domain_icons/timesnownews.png",
+            "priority": 2243,
+            "description": "News - Get Breaking News and Latest News Headlines from India and around the World. Also read news today on Politics, Business, Entertainment, Sports, Education, Auto, Tech, Science, Opinions from leading columnists.",
+            "category": [
+                "sports",
+                "lifestyle",
+                "science",
+                "education",
+                "tourism",
+                "other",
+                "top",
+                "health",
+                "entertainment",
+                "business",
+                "technology",
+                "politics"
+            ],
+            "language": [
+                "bengali",
+                "english",
+                "telugu",
+                "kannada",
+                "marathi",
+                "tamil"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 77733,
+            "last_fetch": "2025-03-14 13:50:59"
+        },
+        {
+            "id": "urdu_news18",
+            "name": "News18 Urdu",
+            "url": "https://urdu.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/urdu_news18.png",
+            "priority": 4964,
+            "description": "Urdu News - Get latest and breaking news at leading Urdu news website. Find top stories related to politics, sports, entertainment videos, photo gallery and much more.",
+            "category": [
+                "sports",
+                "world",
+                "education",
+                "other",
+                "top",
+                "health",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "urdu"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 10341,
+            "last_fetch": "2025-03-14 13:06:58"
+        },
+        {
+            "id": "oilprice",
+            "name": "OIL Price",
+            "url": "https://oilprice.com",
+            "icon": "https://i.bytvi.com/domain_icons/oilprice.png",
+            "priority": 1511,
+            "description": "Crude oil prices & gas price charts. Oil price charts for Brent Crude, WTI & oil futures. Energy news covering oil, petroleum, natural gas, and investment advice.",
+            "category": [
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "india",
+                "australia",
+                "singapore",
+                "canada",
+                "united states of america",
+                "saudi arabia"
+            ],
+            "total_article": 20221,
+            "last_fetch": "2025-03-14 13:20:19"
+        },
+        {
+            "id": "odia_news18",
+            "name": "News18 Odia",
+            "url": "https://odia.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/odia_news18.jpg",
+            "priority": 3985,
+            "description": "Odia News - Get latest and Breaking News at leading Odia news website. Find top stories related to politics, sports, entertainment videos, photo gallery and more on News18 Odia",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "technology",
+                "top",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "oriya"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 2,
+            "last_fetch": "2025-03-14 13:51:25"
+        },
+        {
+            "id": "seekingalpha",
+            "name": "Seeking Alpha",
+            "url": "https://seekingalpha.com",
+            "icon": "https://i.bytvi.com/domain_icons/seekingalpha.png",
+            "priority": 986,
+            "description": "Get stock market news and analysis, investing ideas, earnings calls, charts, and portfolio analysis tools.",
+            "category": [
+                "health",
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "israel",
+                "japan",
+                "canada",
+                "india"
+            ],
+            "total_article": 220321,
+            "last_fetch": "2025-03-14 13:49:34"
+        },
+        {
+            "id": "tv9telugu",
+            "name": "TV9 Telugu",
+            "url": "https://tv9telugu.com",
+            "icon": "https://i.bytvi.com/domain_icons/tv9telugu.png",
+            "priority": 9221,
+            "description": "Telugu News - Get Latest Telugu News, \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c35\u0c3e\u0c30\u0c4d\u0c24\u0c32\u0c41 and Live Coverage updates online on Andhra Pradesh (AP), Telangana, Hyderabad, Politics, Crime, Sports, Cricket, Business, Education, Jobs, Entertainment, Technology, Health. TV9 Telugu covers Today\u2019s breaking News, Top Headlines in Telugu Language Online at tv9telugu.com.",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "technology",
+                "other",
+                "health",
+                "top",
+                "business",
+                "crime",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "telugu"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 2,
+            "last_fetch": "2025-03-14 13:37:26"
+        },
+        {
+            "id": "washingtontimes",
+            "name": "The Washington Times",
+            "url": "https://www.washingtontimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/washingtontimes.png",
+            "priority": 9784,
+            "description": "The Times delivers that audience facts and commentary to inform and to celebrate the American values of freedom, faith and family.",
+            "category": [
+                "environment",
+                "sports",
+                "world",
+                "technology",
+                "other",
+                "health",
+                "top",
+                "entertainment",
+                "business",
+                "crime",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india",
+                "united states of america"
+            ],
+            "total_article": 66139,
+            "last_fetch": "2025-03-14 13:51:56"
+        },
+        {
+            "id": "dtnext",
+            "name": "DT Next",
+            "url": "https://www.dtnext.in",
+            "icon": "https://i.bytvi.com/domain_icons/dtnext.png",
+            "priority": 9316,
+            "description": "DT Next is a daily English Newspaper. Stay updated with the latest news across Tamil Nadu, India, and the world. Read today's top headlines and breaking news.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 20857,
+            "last_fetch": "2025-03-14 13:37:14"
+        },
+        {
+            "id": "in_mashable",
+            "name": "In Mashable",
+            "url": "https://in.mashable.com",
+            "icon": "https://i.bytvi.com/domain_icons/in_mashable.png",
+            "priority": 335,
+            "description": "Mashable is a global, multi-platform media and entertainment company.",
+            "category": [
+                "lifestyle",
+                "science",
+                "technology",
+                "education",
+                "health",
+                "top",
+                "entertainment"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 23394,
+            "last_fetch": "2025-03-14 12:49:21"
+        },
+        {
+            "id": "rt",
+            "name": "RT",
+            "url": "https://www.rt.com/rss",
+            "icon": "https://i.bytvi.com/domain_icons/rt.png",
+            "priority": 3123,
+            "description": "RT is the first Russian 24/7 English-language news channel that brings the Russian view on global news.",
+            "category": [
+                "world",
+                "other",
+                "top",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "mozambique",
+                "mauritania",
+                "malawi",
+                "tunisia",
+                "madagascar",
+                "liberia",
+                "south africa",
+                "burundi",
+                "libya",
+                "seychelles",
+                "central african republic",
+                "morocco",
+                "ghana",
+                "ivory coast",
+                "djibouti",
+                "gabon",
+                "algeria",
+                "kenya",
+                "united kingdom",
+                "senegal",
+                "benin",
+                "uganda",
+                "lesotho",
+                "botswana",
+                "rwanda",
+                "namibia",
+                "cape verde",
+                "zambia",
+                "india",
+                "sudan",
+                "guinea",
+                "cameroon",
+                "gambia",
+                "equatorial guinea",
+                "sierra leone",
+                "ethiopia",
+                "togo",
+                "dr congo",
+                "nigeria",
+                "zimbabwe",
+                "chad",
+                "eritrea",
+                "mauritius",
+                "tanzania",
+                "somalia",
+                "angola",
+                "russia",
+                "burkina fasco"
+            ],
+            "total_article": 61118,
+            "last_fetch": "2025-03-14 13:50:32"
+        },
+        {
+            "id": "telugu_news18",
+            "name": "Telugu News 18",
+            "url": "https://telugu.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/telugu_news18.png",
+            "priority": 3892,
+            "description": "Telugu News - Get Latest and breaking News in Telugu on entertainment, sports, national, world, political, Telangana News, Andhra News at News 18 Telugu. \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c35\u0c3e\u0c30\u0c4d\u0c24\u0c32\u0c41, \u0c24\u0c3e\u0c1c\u0c3e \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c35\u0c3e\u0c30\u0c4d\u0c24\u0c32\u0c41",
+            "category": [
+                "sports",
+                "lifestyle",
+                "world",
+                "science",
+                "food",
+                "technology",
+                "tourism",
+                "other",
+                "top",
+                "health",
+                "entertainment",
+                "business",
+                "crime",
+                "politics"
+            ],
+            "language": [
+                "spanish",
+                "telugu"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 4,
+            "last_fetch": "2025-03-14 13:56:08"
+        },
+        {
+            "id": "engadget",
+            "name": "Engadget",
+            "url": "https://www.engadget.com",
+            "icon": "https://i.bytvi.com/domain_icons/engadget.png",
+            "priority": 2082,
+            "description": "Engadget is the original home for technology news and reviews. Since its founding in 2004, we've grown from an exhaustive source for consumer tech news to a global multimedia organization covering the intersection of technology, gaming, and entertainment.",
+            "category": [
+                "technology"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "united states of america",
+                "india",
+                "singapore"
+            ],
+            "total_article": 20653,
+            "last_fetch": "2025-03-14 13:21:33"
+        },
+        {
+            "id": "sportstar",
+            "name": "SPORT STAR THE HINDU",
+            "url": "https://sportstar.thehindu.com",
+            "icon": "https://i.bytvi.com/domain_icons/sportstar.png",
+            "priority": 2972,
+            "description": "Sports News: Get the latest sports news, today's live sports coverage, live score updates, match schedules, and results of various sports events.",
+            "category": [
+                "sports",
+                "entertainment"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 86395,
+            "last_fetch": "2025-03-14 13:51:21"
+        },
+        {
+            "id": "firstpost",
+            "name": "Firstpost",
+            "url": "https://www.firstpost.com",
+            "icon": "https://i.bytvi.com/domain_icons/firstpost.png",
+            "priority": 5906,
+            "description": "LIVE Updates: Get the Latest Breaking News from India and the World, Health, Politics, Arts and Entertainment, Sports, Business, Education, Technology and much more - Firstpost.com",
+            "category": [
+                "sports",
+                "world",
+                "education",
+                "technology",
+                "top",
+                "health",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 65648,
+            "last_fetch": "2025-03-14 13:51:18"
+        },
+        {
+            "id": "asianetnews",
+            "name": "Asianet News",
+            "url": "https://www.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/asianetnews.png",
+            "priority": 7771,
+            "description": "Malayalam News (\u0d2e\u0d32\u0d2f\u0d3e\u0d33\u0d02 \u0d35\u0d3e\u0d7c\u0d24\u0d4d\u0d24): Get Latest Malayalam news & Today's Breaking News (\u0d2c\u0d4d\u0d30\u0d47\u0d15\u0d4d\u0d15\u0d3f\u0d19\u0d4d \u0d35\u0d3e\u0d7c\u0d24\u0d4d\u0d24) headlines in Malayalam from Kerala, India, Gulf & World News on Politics, Sports, Business, Entertainment & more online at Asianet News, India's leading News portal available in Malayalam, Hindi, Kannada, Tamil, Telugu, Bangla & English.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "malayalam"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 1,
+            "last_fetch": "2025-03-14 13:52:05"
+        },
+        {
+            "id": "kannada_asianetnews",
+            "name": "Asianet Suvarna News",
+            "url": "https://kannada.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/kannada_asianetnews.png",
+            "priority": 7805,
+            "description": "Asianet Suvarna News (\u0c95\u0ca8\u0ccd\u0ca8\u0ca1 \u0cb8\u0cc1\u0ca6\u0ccd\u0ca6\u0cbf) : Asianet News Kannada is India\u2019s #1 Kannada news site for latest Kannada news, Top Stories, Kannada news Headlines & breaking Kannada news online. Stay updated with Today's top Kannada News, Exclusive Karnataka News, Videos, Photos and many more.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "kannada"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 8,
+            "last_fetch": "2025-03-14 10:33:51"
+        },
+        {
+            "id": "investing_in",
+            "name": "Investing India",
+            "url": "https://in.investing.com",
+            "icon": null,
+            "priority": 1205,
+            "description": "Investing.com India serves traders of a wide range of asset classes with real-time charts & quotes along with news and analysis",
+            "category": [
+                "world",
+                "top",
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 71250,
+            "last_fetch": "2025-03-14 13:49:25"
+        },
+        {
+            "id": "hindustantimes",
+            "name": "Hindustan Times",
+            "url": "http://www.hindustantimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/hindustantimes.png",
+            "priority": 933,
+            "description": "News Headlines: Hindustan Times provides exclusive top stories of the day, today headlines from politics, business, technology, photos, videos, latest English news, and much more.",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "science",
+                "education",
+                "tourism",
+                "other",
+                "top",
+                "health",
+                "business",
+                "entertainment",
+                "technology"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 309882,
+            "last_fetch": "2025-03-14 13:49:58"
+        },
+        {
+            "id": "pcmag",
+            "name": "PCMag",
+            "url": "https://www.pcmag.com",
+            "icon": "https://i.bytvi.com/domain_icons/pcmag.png",
+            "priority": 439,
+            "description": "PC Magazine is your complete guide to computers, phones, tablets, peripherals, and more. We test and review the latest gadgets, products, and services, report technology news and trends, and provide shopping advice and price comparisons.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 14185,
+            "last_fetch": "2025-03-14 12:01:04"
+        },
+        {
+            "id": "prnewswire_apac",
+            "name": "PR Newswire APAC",
+            "url": "https://www.prnewswire.com/apac",
+            "icon": "https://i.bytvi.com/domain_icons/prnewswire_apac.png",
+            "priority": 1822,
+            "description": "PR Newswire\u2019s news distribution, targeting, monitoring, and marketing solutions help you connect and engage with target audiences across the globe.",
+            "category": [
+                "environment",
+                "sports",
+                "technology",
+                "tourism",
+                "health",
+                "entertainment",
+                "business",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "cambodia",
+                "brunei",
+                "fiji",
+                "malaysia",
+                "bangladesh",
+                "afghanistan",
+                "south korea",
+                "nepal",
+                "philippines",
+                "sri lanka",
+                "pakistan",
+                "mongolia",
+                "thailand",
+                "india",
+                "australia",
+                "bhutan",
+                "maldives",
+                "new zealand",
+                "japan",
+                "singapore",
+                "hong kong",
+                "china",
+                "indonesia"
+            ],
+            "total_article": 9988,
+            "last_fetch": "2025-03-14 12:50:07"
+        },
+        {
+            "id": "channelnewsasia",
+            "name": "Channel NewsAsia",
+            "url": "https://www.channelnewsasia.com",
+            "icon": "https://i.bytvi.com/domain_icons/channelnewsasia.jpg",
+            "priority": 4142,
+            "description": "Breaking news and latest stories from Singapore, Asia, and around the world; commentary, business, sports, technology, health, and more. Watch CNA live.",
+            "category": [
+                "sports",
+                "top",
+                "world",
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "taiwan",
+                "kyrgyzstan",
+                "cambodia",
+                "syria",
+                "brunei",
+                "qatar",
+                "malaysia",
+                "bangladesh",
+                "lebanon",
+                "timor-leste",
+                "afghanistan",
+                "romania",
+                "south korea",
+                "nepal",
+                "laos",
+                "philippines",
+                "north korea",
+                "sri lanka",
+                "iran",
+                "macau",
+                "pakistan",
+                "tajikistan",
+                "mongolia",
+                "vietnam",
+                "thailand",
+                "kazakhstan",
+                "india",
+                "cyprus",
+                "bhutan",
+                "maldives",
+                "saudi arabia",
+                "azerbaijan",
+                "uzbekistan",
+                "armenia",
+                "turkey",
+                "jordan",
+                "iraq",
+                "myanmar",
+                "kuwait",
+                "japan",
+                "georgia",
+                "israel",
+                "united arab emirates",
+                "oman",
+                "singapore",
+                "hong kong",
+                "china",
+                "indonesia",
+                "bahrain",
+                "yemen",
+                "turkmenistan"
+            ],
+            "total_article": 111703,
+            "last_fetch": "2025-03-14 13:35:51"
+        },
+        {
+            "id": "tamil_news18",
+            "name": "Tamil News 18",
+            "url": "https://tamil.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/tamil_news18.png",
+            "priority": 3985,
+            "description": "Tamil News - Get Latest and breaking News in Tamil on entertainment, sports, national, world, political, Tamil Nadu News at Tamil News 18. \u0ba4\u0bae\u0bbf\u0bb4\u0bcd \u0ba8\u0bbf\u0baf\u0bc2\u0bb8\u0bcd, \u0ba4\u0bae\u0bbf\u0bb4\u0bcd\u0ba8\u0bbe\u0b9f\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0ba4\u0bbf\u0b95\u0bb3\u0bcd",
+            "category": [
+                "environment",
+                "domestic",
+                "sports",
+                "lifestyle",
+                "world",
+                "food",
+                "technology",
+                "education",
+                "tourism",
+                "top",
+                "health",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "spanish",
+                "tamil"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 114,
+            "last_fetch": "2025-03-14 10:23:33"
+        },
+        {
+            "id": "marathi_asianetnews",
+            "name": "Asianet News Marathi",
+            "url": "https://marathi.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/marathi_asianetnews.png",
+            "priority": 7805,
+            "description": "Marathi News (\u092e\u0930\u093e\u0920\u0940 \u092c\u093e\u0924\u092e\u094d\u092f\u093e): Get Latest Breaking News Headlines in Marathi. Exclusive Marathi News on Politics, Business, Bollywood, Technology, Cricket from India & World at Asianet News Marathi.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "marathi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 45,
+            "last_fetch": "2025-03-14 10:47:43"
+        },
+        {
+            "id": "bbc",
+            "name": "The BBC",
+            "url": "http://www.bbc.com",
+            "icon": "https://i.bytvi.com/domain_icons/bbc.jpg",
+            "priority": 103,
+            "description": "Breaking news, sport, TV, radio, and a whole lot more. The BBC informs, educates, and entertains - wherever you are, whatever your age.",
+            "category": [
+                "entertainment",
+                "politics",
+                "technology",
+                "health",
+                "tourism",
+                "business",
+                "top",
+                "science",
+                "sports",
+                "world"
+            ],
+            "language": [
+                "hindi",
+                "turkish",
+                "english",
+                "persian"
+            ],
+            "country": [
+                "iran",
+                "united states of america",
+                "pakistan",
+                "afghanistan",
+                "india",
+                "united kingdom",
+                "turkey"
+            ],
+            "total_article": 96188,
+            "last_fetch": "2025-03-14 13:49:08"
+        },
+        {
+            "id": "newsable_asianetnews",
+            "name": "Asianet Newsable",
+            "url": "https://newsable.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/newsable_asianetnews.jpg",
+            "priority": 7749,
+            "description": "News Today: Get latest news headlines from India and World. Read top National News, Current News and Trending News stories, Photos, Videos from Entertainment, Bollywood, Politics, Sports, Cricket, Astrology, Crime and many more at Asianet Newsable.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 33892,
+            "last_fetch": "2025-03-14 13:51:17"
+        },
+        {
+            "id": "marathi_indiatimes",
+            "name": "Maharashtra Times",
+            "url": "https://marathi.indiatimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/marathi_indiatimes.png",
+            "priority": 481,
+            "description": "Get latest Marathi news from Maharashtra, India and World. Maharashtra Times, a Marathi news paper provides news in Marathi, Marathi batmya, todays news headlines from sports, entertainment, politics and more.",
+            "category": [
+                "sports",
+                "technology",
+                "other",
+                "top",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "marathi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 90,
+            "last_fetch": "2025-03-14 07:15:27"
+        },
+        {
+            "id": "gujarati_news18",
+            "name": "News18 Gujarati",
+            "url": "https://gujarati.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/gujarati_news18.jpg",
+            "priority": 4964,
+            "description": "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0 \u0ab8\u0aae\u0abe\u0a9a\u0abe\u0ab0 (Gujarati News): Get all the latest Gujarati Samachar \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0 \u0aa8\u0acd\u0aaf\u0ac2\u0a9d covering Gujarat Samachar politics, business, Gujarati entertainment news, cricket, lifestyle, education, Gujarati Top Headlines, Daily Breaking News and more on News18 Gujarati",
+            "category": [
+                "domestic",
+                "sports",
+                "lifestyle",
+                "world",
+                "food",
+                "technology",
+                "health",
+                "top",
+                "crime",
+                "business",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "gujarati"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 9,
+            "last_fetch": "2025-03-14 13:54:04"
+        },
+        {
+            "id": "navbharattimes",
+            "name": "NBT navbharattimes",
+            "url": "https://navbharattimes.indiatimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/navbharattimes.png",
+            "priority": 244,
+            "description": "Hindi News: Read Latest News in Hindi at Navbharat Times Leading Hindi News Website. \u092a\u095d\u0947 \u0926\u0947\u0936 (India), \u0930\u093e\u091c\u094d\u092f (State), \u0926\u0941\u0928\u093f\u092f\u093e (World), \u0916\u0947\u0932 (Sports), \u092c\u093f\u095b\u0928\u0947\u0938 (Business), \u092e\u0928\u094b\u0930\u0902\u091c\u0928 (Entertainment), \u0936\u093f\u0915\u094d\u0937\u093e (Education) \u0938\u0947 \u091c\u0941\u095c\u0940 \u0916\u092c\u0930\u0947\u0902 \u0928\u0935\u092d\u093e\u0930\u0924 \u091f\u093e\u0907\u092e\u094d\u0938 \u092a\u0930.",
+            "category": [
+                "sports",
+                "lifestyle",
+                "world",
+                "technology",
+                "education",
+                "other",
+                "top",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 142964,
+            "last_fetch": "2025-03-14 13:48:39"
+        },
+        {
+            "id": "appleinsider",
+            "name": "Apple Insider",
+            "url": "https://appleinsider.com",
+            "icon": "https://i.bytvi.com/domain_icons/appleinsider.png",
+            "priority": 3027,
+            "description": "For Apple News, Rumors, Reviews, Prices, and Deals, trust AppleInsider. Serving Apple product enthusiasts since 1997.",
+            "category": [
+                "technology"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "india",
+                "australia",
+                "singapore",
+                "canada",
+                "united states of america"
+            ],
+            "total_article": 19141,
+            "last_fetch": "2025-03-14 12:19:42"
+        },
+        {
+            "id": "espncricinfo",
+            "name": "Espncricinfo",
+            "url": "https://www.espncricinfo.com",
+            "icon": "https://i.bytvi.com/domain_icons/espncricinfo.png",
+            "priority": 1162,
+            "description": "Get live cricket scores, cricket updates of upcoming International, domestic and T20 matches. Catch all the latest videos, news about cricket on ESPNcricinfo.",
+            "category": [
+                "sports"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "zimbabwe",
+                "new zealand",
+                "united kingdom",
+                "india",
+                "bangladesh",
+                "australia",
+                "south africa",
+                "world",
+                "sri lanka",
+                "pakistan"
+            ],
+            "total_article": 7611,
+            "last_fetch": "2025-03-14 13:34:33"
+        },
+        {
+            "id": "gsmarena",
+            "name": "GSM Arena",
+            "url": "https://www.gsmarena.com",
+            "icon": "https://i.bytvi.com/domain_icons/gsmarena.jpg",
+            "priority": 1423,
+            "description": "GSMArena.com - The ultimate resource for GSM handset information.",
+            "category": [
+                "technology"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 17865,
+            "last_fetch": "2025-03-14 13:04:28"
+        },
+        {
+            "id": "jagranjosh",
+            "name": "Jagran Josh",
+            "url": "https://www.jagranjosh.com",
+            "icon": "https://i.bytvi.com/domain_icons/jagranjosh.png",
+            "priority": 7152,
+            "description": "Jagran Josh provides Latest Education News and One Stop Destination for School & College going Students along with Study Material, Free Notes for Board, Govt. and other Competitive Exams.",
+            "category": [
+                "education"
+            ],
+            "language": [
+                "english",
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 7954,
+            "last_fetch": "2025-03-14 13:36:01"
+        },
+        {
+            "id": "hellomagazine",
+            "name": "Hellomagazine",
+            "url": "https://www.hellomagazine.com",
+            "icon": "https://i.bytvi.com/domain_icons/hellomagazine.png",
+            "priority": 534,
+            "description": "HELLO! brings you the latest celebrity & royal news from the UK & around the world, magazine exclusives, fashion, beauty, lifestyle news, celeb babies, weddings, pregnancies and more!",
+            "category": [
+                "lifestyle",
+                "food",
+                "tourism",
+                "other",
+                "health",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "canada",
+                "india"
+            ],
+            "total_article": 33567,
+            "last_fetch": "2025-03-14 13:48:48"
+        },
+        {
+            "id": "economist",
+            "name": "The Economist",
+            "url": "https://www.economist.com",
+            "icon": "https://i.bytvi.com/domain_icons/economist.png",
+            "priority": 2794,
+            "description": "Published since September 1843 to take part in \u201ca severe contest between intelligence, which presses forward, and an unworthy, timid ignorance obstructing our progress.\u201d",
+            "category": [
+                "world",
+                "science",
+                "technology",
+                "other",
+                "top",
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "taiwan",
+                "syria",
+                "qatar",
+                "malaysia",
+                "lebanon",
+                "timor-leste",
+                "costa rica",
+                "greece",
+                "poland",
+                "portugal",
+                "croatia",
+                "slovenia",
+                "laos",
+                "united kingdom",
+                "venezuela",
+                "liechtenstein",
+                "macedonia",
+                "albania",
+                "iran",
+                "haiti",
+                "mexico",
+                "macau",
+                "malta",
+                "kazakhstan",
+                "india",
+                "nicaragua",
+                "cyprus",
+                "azerbaijan",
+                "turkey",
+                "luxembourg",
+                "guyana",
+                "united arab emirates",
+                "oman",
+                "serbia",
+                "hong kong",
+                "china",
+                "vietnam",
+                "turkmenistan",
+                "sweden",
+                "cambodia",
+                "switzerland",
+                "dominican republic",
+                "bangladesh",
+                "libya",
+                "jamaica",
+                "finland",
+                "south korea",
+                "austria",
+                "chile",
+                "dominica",
+                "france",
+                "guatemala",
+                "el salvador",
+                "pakistan",
+                "tajikistan",
+                "ecuador",
+                "thailand",
+                "andorra",
+                "denmark",
+                "vatican",
+                "san marino",
+                "maldives",
+                "bolivia",
+                "kuwait",
+                "georgia",
+                "barbados",
+                "israel",
+                "singapore",
+                "belgium",
+                "bahrain",
+                "ireland",
+                "brunei",
+                "bosnia and herzegovina",
+                "monaco",
+                "afghanistan",
+                "romania",
+                "djibouti",
+                "algeria",
+                "kosovo",
+                "hungary",
+                "moldova",
+                "philippines",
+                "estonia",
+                "mongolia",
+                "honduras",
+                "bhutan",
+                "uruguay",
+                "saudi arabia",
+                "jordan",
+                "iraq",
+                "peru",
+                "yemen",
+                "paraguay",
+                "kyrgyzstan",
+                "germany",
+                "mauritania",
+                "tunisia",
+                "ukraine",
+                "united states of america",
+                "puerto rico",
+                "lithuania",
+                "slovakia",
+                "morocco",
+                "bulgaria",
+                "belize",
+                "latvia",
+                "bahamas",
+                "panama",
+                "nepal",
+                "egypt",
+                "spain",
+                "north korea",
+                "belarus",
+                "sri lanka",
+                "netherland",
+                "colombia",
+                "cuba",
+                "italy",
+                "iceland",
+                "sudan",
+                "canada",
+                "uzbekistan",
+                "armenia",
+                "montenegro",
+                "ethiopia",
+                "norway",
+                "myanmar",
+                "japan",
+                "somalia",
+                "brazil",
+                "argentina",
+                "suriname",
+                "indonesia",
+                "czech republic",
+                "russia"
+            ],
+            "total_article": 10094,
+            "last_fetch": "2025-03-14 10:48:49"
+        },
+        {
+            "id": "hindustantimes_tech",
+            "name": "HT Tech",
+            "url": "https://tech.hindustantimes.com",
+            "icon": "https://i.bytvi.com/domain_icons/hindustantimes_tech.png",
+            "priority": 337,
+            "description": "Technology News - Find the latest technology news on mobile phones, laptops, gadgets, gaming, and wearables. Get the latest reviews and updates of all the gadgets with specifications, latest photos and videos on HT Tech.",
+            "category": [
+                "technology",
+                "entertainment"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 22947,
+            "last_fetch": "2025-03-14 02:15:24"
+        },
+        {
+            "id": "arstechnica",
+            "name": "Ars Technica",
+            "url": "https://arstechnica.com",
+            "icon": "https://i.bytvi.com/domain_icons/arstechnica.png",
+            "priority": 3840,
+            "description": "Serving the Technologist for more than a decade. It is news, reviews, and analysis.",
+            "category": [
+                "technology",
+                "sports",
+                "top",
+                "science"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united states of america",
+                "canada",
+                "india"
+            ],
+            "total_article": 15140,
+            "last_fetch": "2025-03-14 13:05:23"
+        },
+        {
+            "id": "tamil_asianetnews",
+            "name": "Asianet News Tamil",
+            "url": "https://tamil.asianetnews.com",
+            "icon": "https://i.bytvi.com/domain_icons/tamil_asianetnews.jpg",
+            "priority": 7786,
+            "description": "Tamil News (\u0ba4\u0bae\u0bbf\u0bb4\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0ba4\u0bbf\u0b95\u0bb3\u0bcd): Read latest Tamil News and breaking news in Tamil online. Find today's news headlines in Tamil, Top stories from Tamil Nadu, India, World, Politics, Business News, Sports News, Video News (\u0ba4\u0bae\u0bbf\u0bb4\u0bcd \u0bb5\u0bc0\u0b9f\u0bbf\u0baf\u0bcb \u0b9a\u0bc6\u0baf\u0bcd\u0ba4\u0bbf\u0b95\u0bb3\u0bcd), Kollywood Cinema News (\u0ba4\u0bae\u0bbf\u0bb4\u0bcd \u0b9a\u0bbf\u0ba9\u0bbf\u0bae\u0bbe), Astrology and more at Asianet News Tamil. \u09aa\u09a1\u09bc\u09c1\u09a8\u0964\u09a8\u0964",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "tamil"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 29895,
+            "last_fetch": "2025-03-14 13:36:47"
+        },
+        {
+            "id": "zeenews",
+            "name": "ZEE News",
+            "url": "http://zeenews.india.com",
+            "icon": "https://i.bytvi.com/domain_icons/zeenews.png",
+            "priority": 5319,
+            "description": "Zee News brings the latest news from India and World on breaking news, today news headlines, politics, business, technology, Bollywood, entertainment, sports, and others. Find exclusive news stories on Indian politics, current affairs, cricket matches, festivals, and events.",
+            "category": [
+                "domestic",
+                "sports",
+                "world",
+                "science",
+                "technology",
+                "other",
+                "health",
+                "top",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "gujarati",
+                "bengali",
+                "english",
+                "malayalam",
+                "kannada",
+                "telugu",
+                "hindi",
+                "tamil"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 292267,
+            "last_fetch": "2025-03-14 13:51:42"
+        },
+        {
+            "id": "gamespot",
+            "name": "GameSpot",
+            "url": "https://www.gamespot.com",
+            "icon": "https://i.bytvi.com/domain_icons/gamespot.png",
+            "priority": 476,
+            "description": "GameSpot delivers the best and most comprehensive video game and entertainment coverage, including news, reviews, trailers, walkthroughs, and guides for PS4, Xbox One, Nintendo Switch, PC, and Google Stadia.",
+            "category": [
+                "entertainment"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "united kingdom",
+                "india",
+                "australia",
+                "singapore",
+                "united states of america"
+            ],
+            "total_article": 20858,
+            "last_fetch": "2025-03-14 13:49:17"
+        },
+        {
+            "id": "in_ign",
+            "name": "In Ign",
+            "url": "https://in.ign.com",
+            "icon": "https://i.bytvi.com/domain_icons/in_ign.png",
+            "priority": 149,
+            "description": "IGN India is your ultimate destination for xbox 360, xbox one, ps3, ps4, PC, Vita, 3DS & Iphone games with expert reviews, previews, news, cheat codes, wikis.",
+            "category": [
+                "sports",
+                "science",
+                "technology",
+                "other",
+                "top",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 24395,
+            "last_fetch": "2025-03-14 13:48:53"
+        },
+        {
+            "id": "bengali_news18",
+            "name": "Bengali News 18",
+            "url": "https://bengali.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/bengali_news18.jpg",
+            "priority": 4964,
+            "description": "Bengali News - Get latest and breaking Bangla News \u09ac\u09cd\u09b0\u09c7\u0995\u09bf\u0982 \u09ac\u09be\u0982\u09b2\u09be \u09a8\u09bf\u0989\u099c, \u09ac\u09be\u0982\u09b2\u09be \u0996\u09ac\u09b0, on entertainment, sports, national, world, political and much more on News 18 Bengali.",
+            "category": [
+                "sports",
+                "lifestyle",
+                "world",
+                "science",
+                "food",
+                "technology",
+                "education",
+                "other",
+                "top",
+                "health",
+                "business",
+                "entertainment"
+            ],
+            "language": [
+                "bengali"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 66646,
+            "last_fetch": "2025-03-14 13:53:07"
+        },
+        {
+            "id": "businesstoday",
+            "name": "Business News India",
+            "url": "https://www.businesstoday.in",
+            "icon": "https://i.bytvi.com/domain_icons/businesstoday.jpg",
+            "priority": 9735,
+            "description": "Business News Today: Get latest business news from India, breaking business news updates, live share market news today, trending business news, stocks, IPO, finance, economy, crypto stories on Business Today.",
+            "category": [
+                "top"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 19983,
+            "last_fetch": "2025-03-14 13:07:34"
+        },
+        {
+            "id": "jagran",
+            "name": "\u0924\u093e\u091c\u093e \u0939\u093f\u0902\u0926\u0940 \u0916\u093c\u092c\u0930\u0947\u0902",
+            "url": "https://www.jagran.com",
+            "icon": "https://i.bytvi.com/domain_icons/jagran.jpg",
+            "priority": 6734,
+            "description": "Hindi News Paper Dainik Jagran: Read Breaking Hindi News, Latest News in Hindi, \u0924\u093e\u091c\u093c\u093e \u0938\u092e\u093e\u091a\u093e\u0930, \u0939\u093f\u0902\u0926\u0940 \u0938\u092e\u093e\u091a\u093e\u0930 and \u0939\u093f\u0902\u0926\u0940 \u0928\u094d\u092f\u0942\u095b on Politics, Business, Bollywood, Technology, Automobile, Astrology and Cricket Hindi Samachar. \u0926\u0948\u0928\u093f\u0915 \u091c\u093e\u0917\u0930\u0923 \u092a\u0930 \u092a\u0922\u093c\u0947\u0902 \u0930\u093e\u091c\u0928\u0940\u0924\u093f, \u0935\u094d\u092f\u093e\u092a\u093e\u0930, \u092c\u0949\u0932\u0940\u0935\u0941\u0921, \u091f\u0947\u0915\u094d\u0928\u0949\u0932\u0949\u091c\u0940, \u0911\u091f\u094b\u092e\u094b\u092c\u093e\u0907\u0932, \u091c\u094d\u092f\u094b\u0924\u093f\u0937, \u0915\u094d\u0930\u093f\u0915\u0947\u091f, \u0926\u0947\u0936 \u0914\u0930 \u0926\u0941\u0928\u093f\u092f\u093e \u0938\u0947 \u091c\u0941\u0921\u093c\u0940 \u0906\u091c \u0915\u0940 \u0924\u093e\u091c\u093e \u0939\u093f\u0902\u0926\u0940 \u0916\u093c\u092c\u0930\u0947\u0902\u0964",
+            "category": [
+                "domestic",
+                "world",
+                "other",
+                "entertainment",
+                "business"
+            ],
+            "language": [
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 44808,
+            "last_fetch": "2025-03-14 13:50:47"
+        },
+        {
+            "id": "sportskeeda",
+            "name": "Sportskeeda",
+            "url": "http://sportskeeda.com",
+            "icon": "https://i.bytvi.com/domain_icons/sportskeeda.png",
+            "priority": 172,
+            "description": "Read all the latest Sports News & Live Updates in Sportskeeda. Get Live Scores, Fixtures, Schedules, Points Table, Team Standings & Match Updates on All Sports like Football, Cricket, NBA, WWE, Kabaddi, etc.",
+            "category": [
+                "sports"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 57726,
+            "last_fetch": "2025-03-10 00:45:16"
+        },
+        {
+            "id": "assam_news18",
+            "name": "News18 \u0985\u09b8\u09ae",
+            "url": "https://assam.news18.com",
+            "icon": "https://i.bytvi.com/domain_icons/assam_news18.png",
+            "priority": 4964,
+            "description": "Get latest news and breaking news in Assamese on politics, sports, lifestyle, entertainment, business, games from Assam and across India including photos, videos and many more at News18 Assam (News18 \u0985\u09b8\u09ae).",
+            "category": [
+                "sports",
+                "world",
+                "lifestyle",
+                "technology",
+                "other",
+                "top",
+                "health",
+                "entertainment",
+                "business",
+                "crime"
+            ],
+            "language": [
+                "assamese"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 136,
+            "last_fetch": "2025-03-13 18:19:18"
+        },
+        {
+            "id": "investing_hi",
+            "name": "Investing \u092d\u093e\u0930\u0924",
+            "url": "https://hi.investing.com",
+            "icon": "https://i.bytvi.com/domain_icons/investing_hi.png",
+            "priority": 1143,
+            "description": "Investing.com \u092d\u093e\u0930\u0924 \u090f\u0938\u0947\u091f \u0936\u094d\u0930\u0947\u0923\u0940 \u0915\u0940\u0947 \u0935\u094d\u092f\u093e\u092a\u0915 \u0936\u094d\u0930\u0902\u0916\u0932\u093e \u0915\u0947 \u091f\u094d\u0930\u0947\u0921\u0930\u094d\u0938 \u0915\u094b \u0938\u092e\u093e\u091a\u093e\u0930\u094b\u0902 \u0924\u0925\u093e \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923\u094b\u0902 \u0915\u0947 \u0938\u093e\u0925-\u0938\u093e\u0925 \u0930\u093f\u092f\u0932-\u091f\u093e\u0907\u092e \u091a\u093e\u0930\u094d\u091f\u094d\u0938 \u0924\u0925\u093e \u0915\u094b\u091f\u094d\u0938 \u092d\u0940 \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u093e \u0939\u0948",
+            "category": [
+                "world",
+                "top",
+                "business"
+            ],
+            "language": [
+                "hindi"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 90882,
+            "last_fetch": "2025-03-14 13:49:03"
+        },
+        {
+            "id": "indiatoday",
+            "name": "India Today",
+            "url": "https://www.indiatoday.in",
+            "icon": "https://i.bytvi.com/domain_icons/indiatoday.png",
+            "priority": 2885,
+            "description": "Check out the latest news from India and around the world. Latest India news on Bollywood, Politics, Business, Cricket, Technology, and Travel.",
+            "category": [
+                "food",
+                "other",
+                "health",
+                "top",
+                "business",
+                "entertainment",
+                "politics"
+            ],
+            "language": [
+                "english"
+            ],
+            "country": [
+                "india"
+            ],
+            "total_article": 164441,
+            "last_fetch": "2025-03-14 10:02:45"
+        }
+    ],
+    "nextPage": null
+}
