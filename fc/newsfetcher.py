@@ -2,9 +2,9 @@ from newsapi.newsapi_client import NewsApiClient
 import os
 from dotenv import load_dotenv
 from .news_summ import get_news
-from .fact_checker import FactChecker
 import uuid
 from db.database_service import DatabaseService
+from factcheck_instance import fact_checker_instance
 
 load_dotenv(dotenv_path=".env")
 
@@ -12,10 +12,7 @@ class NewsFetcher:
     def __init__(self):
         self.newsapi = NewsApiClient(api_key=os.environ.get('NEWS_API_KEY'))
         self.db_service = DatabaseService()
-        self.fact_checker = FactChecker(
-            groq_api_key=os.getenv("GROQ_API_KEY"),
-            serper_api_key=os.getenv("SERPER_API_KEY")
-        )
+        self.fact_checker = fact_checker_instance
 
     def fetch_initial_news(self):
     # Fetch first batch of 200 news articles
@@ -31,15 +28,11 @@ class NewsFetcher:
         
     def process_single_news(self):
         news = self.db_service.get_unprocessed_news()
-        print("Got news")
 
         if not news:
-            print("No news to process")
             # Pre-fetch new news before clearing database
             new_news = self.newsapi.get_top_headlines(language='en', page=1, page_size=100)
-            print("Got new news")
             if new_news['articles']:
-                print("Storing new news")
                 # Start batch operations
                 batch = self.db_service.db.batch()
                 
@@ -56,16 +49,13 @@ class NewsFetcher:
                 
                 # Store new news
                 self.db_service.store_news(new_news['articles'])
-                print("Stored new news")
                 # Process first new article immediately
                 return self.process_single_news()
             
             self.fetch_initial_news()
-            print("No news to process, refreshing news database")
             return {'status': 'refresh', 'content': 'Refreshing news database'}
         
         news_text = get_news(news['url'])
-        print("Got news text")
         if news_text['status'] == 'error' or len(news_text["summary"]) == 0:
             # remove the news from the database
             self.db_service.news_ref.document(news['id']).delete()
@@ -80,7 +70,8 @@ class NewsFetcher:
             "fact_check": {
                 "detailed_analysis" : {
                     "overall_analysis" : fact_check_result["detailed_analysis"]["overall_analysis"],
-                    "claim_analysis" : fact_check_result["detailed_analysis"]["claim_analysis"]
+                    "claim_analysis" : fact_check_result["detailed_analysis"]["claim_analysis"],
+                    "source_analysis" : fact_check_result["source_credibility"]
                 }
             },
             "sources": fact_check_result["sources"]

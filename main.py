@@ -20,9 +20,7 @@ news_fetcher = NewsFetcher()
 
 async def fetch_and_broadcast_news():
     try:
-        print("Fetching and broadcasting news")       
         news_data = news_fetcher.process_single_news()
-        print("DOne fetching and broadcasting news")
 
         if news_data["status"] == "refresh":
             pusher_client.trigger('news-channel', 'refresh-news', {

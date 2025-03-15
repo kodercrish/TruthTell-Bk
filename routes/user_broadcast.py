@@ -6,6 +6,7 @@ from db.database_service import DatabaseService
 from datetime import datetime
 import os
 from pusher_api import pusher_client
+from factcheck_instance import fact_checker_instance
 
 router = APIRouter()
 db_service = DatabaseService()
@@ -17,10 +18,7 @@ class UserInput(BaseModel):
 
 @router.post("/user-broadcast")
 async def create_user_broadcast(user_input: UserInput):
-    fact_checker = FactChecker(
-        groq_api_key=os.getenv("GROQ_API_KEY"),
-        serper_api_key=os.getenv("SERPER_API_KEY")
-    )
+    fact_checker = fact_checker_instance
     
     factcheck_result = fact_checker.generate_report(user_input.text)
     

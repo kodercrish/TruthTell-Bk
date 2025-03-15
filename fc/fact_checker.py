@@ -13,7 +13,8 @@ from google.ai.generativelanguage_v1beta.types import content
 import time
 from routes.news_summ import get_news
 from urllib.parse import urlparse
-
+import threading
+import concurrent.futures
 
 dotenv.load_dotenv()
 
@@ -115,8 +116,11 @@ class FactChecker:
             type = content.Type.ARRAY,
             items = content.Schema(
             type = content.Type.OBJECT,
-            required = ["credibility_score", "fact_checking_history", "transparency_score", "expertise_level"],
+            required = ["source", "credibility_score", "fact_checking_history", "transparency_score", "expertise_level", "additional_metrics"],
             properties = {
+            "source": content.Schema(
+                type = content.Type.STRING,
+            ),
             "credibility_score": content.Schema(
                 type = content.Type.INTEGER,
             ),
@@ -181,7 +185,7 @@ class FactChecker:
         #     response_format={"type": "json_object"}
         # )
         
-        gemini_questions_prompt = f"Generate specific questions to verify this claim. Make a maximum of 5 questions for the claim. Return as JSON array:\n\n{claim}"
+        gemini_questions_prompt = f"Generate specific questions to verify this claim. Make a maximum of 3 questions for the claim. Return as JSON array:\n\n{claim}"
 
         generation_config_questions = {
         "temperature": 1,
@@ -242,7 +246,7 @@ class FactChecker:
         source_analysis_prompt = f"""
         Analyze the credibility of these news sources:
         
-        {json.dumps(domains)}
+        {domains}
         
         For each source, evaluate:
         1. Credibility score (1-100)
@@ -262,8 +266,6 @@ class FactChecker:
         
         try:
             source_ratings = json.loads(response.text)
-            print("Source ratings:")
-            print(source_ratings)
             
             # Map the domain analysis back to the original URLs
             result = []
@@ -278,6 +280,37 @@ class FactChecker:
             print(f"Error parsing source credibility analysis: {str(e)}")
             return []
 
+    def _generate_enhanced_report(self, news_summ, evidences, result_dict):
+        """Helper method to generate enhanced report in a separate thread"""
+        report_prompt = f"""Generate a comprehensive fact-check analysis report for this news claim and supporting evidence. Structure your analysis according to these sections:
+
+        1. Overall Analysis:
+        - Calculate a truth score (0-100) based on evidence verification
+        - Provide a detailed reliability assessment of the claim
+        - List key findings from cross-referencing evidence
+        - Identify any patterns of inaccuracy or misrepresentation
+
+        2. Evidence Analysis for Claim: {news_summ}
+        Evidence Sources:
+        {json.dumps(evidences)}
+
+        Analyze:
+        - Verification status with specific reasoning
+        - Confidence level based on evidence strength
+        - Potential biases or agendas revealed by evidence
+        - Severity of misinformation impact
+        
+        Please provide numerical scores where applicable and cite specific evidence examples to support your analysis.
+        """
+            
+        enhanced_report = self.gemini_client.generate_content(report_prompt)
+        result_dict['detailed_analysis'] = json.loads(enhanced_report.text)
+
+    def _analyze_sources_credibility(self, sources, result_dict):
+        """Helper method to analyze source credibility in a separate thread"""
+        source_credibility = self.analyze_source_credibility(sources[:5])  # Analyze top 5 sources
+        result_dict['source_credibility'] = source_credibility
+    
     def generate_report(self, news_summ: str) -> Dict:
         ### FUTURE PROSPECT ###
         # # Source credibility analysis
@@ -318,38 +351,27 @@ class FactChecker:
                     evidences.append(ev_news["summary"])
                     sources.append(evidence_item['url'])
         
-        # #update the prompt to generate the fact check report based on the verif_ques and evidences retrieved
-        report_prompt = f"""Generate a comprehensive fact-check analysis report for this news claim and supporting evidence. Structure your analysis according to these sections:
-
-        1. Overall Analysis:
-        - Calculate a truth score (0-100) based on evidence verification
-        - Provide a detailed reliability assessment of the claim
-        - List key findings from cross-referencing evidence
-        - Identify any patterns of inaccuracy or misrepresentation
-
-        2. Evidence Analysis for Claim: {news_summ}
-        Evidence Sources:
-        {json.dumps(evidences)}
-
-        Analyze:
-        - Verification status with specific reasoning
-        - Confidence level based on evidence strength
-        - Evidence quality assessment:
-        * Evidence strength rating
-        * Information gaps identified
-        * Any contradictions between sources
-        - Source evaluation:
-        * Credibility metrics
-        * Bias patterns
-        * Fact-checking history
-
-        3. Meta Analysis:
-        - Assess potential impact on public understanding
-        - Suggest specific correction actions if needed
-        - Recommend prevention strategies for misinformation
-
-        Please provide numerical scores where applicable and cite specific evidence examples to support your analysis.
-        """
+        # Use a dictionary to store results from threads
+        thread_results = {}
+        
+        # Create threads for parallel execution
+        report_thread = threading.Thread(
+            target=self._generate_enhanced_report,
+            args=(news_summ, evidences, thread_results)
+        )
+        
+        source_thread = threading.Thread(
+            target=self._analyze_sources_credibility,
+            args=(sources, thread_results)
+        )
+        
+        # Start both threads
+        report_thread.start()
+        source_thread.start()
+        
+        # Wait for both threads to complete
+        report_thread.join()
+        source_thread.join()
 
         ### FUTURE PROSPECT ###
         # Source Ratings: {json.dumps(source_ratings)}
@@ -362,16 +384,13 @@ class FactChecker:
         #         correction_sources[claim.statement] = correction_results
         ### FUTURE PROSPECT ###
             
-        enhanced_report = self.gemini_client.generate_content(report_prompt)
-
-        report_content = json.loads(enhanced_report.text)
-        source_credibility = self.analyze_source_credibility(sources[:5])  # Analyze top 5 sources
+         # Return the combined results
         return {
             "timestamp": datetime.now().isoformat(),
             "original_text": news_summ,
-            "detailed_analysis": report_content,
+            "detailed_analysis": thread_results.get('detailed_analysis', {}),
             "sources": sources[:5],
-            "source_credibility": source_credibility
+            "source_credibility": thread_results.get('source_credibility', [])
         }
             ### FUTURE PROSPECT ###
             # "correction_sources": correction_sources

@@ -3,7 +3,7 @@ from newsapi.newsapi_client import NewsApiClient
 from fastapi import APIRouter, HTTPException
 import os
 from dotenv import load_dotenv
-from fc.fact_checker import FactChecker
+from factcheck_instance import fact_checker_instance
 
 from pydantic import BaseModel
 
@@ -59,10 +59,7 @@ async def fact_check_selected_news(selection: NewsSelectionInput):
             }
         
         # Initialize the fact checker
-        fact_checker = FactChecker(
-            groq_api_key=os.getenv("GROQ_API_KEY"), 
-            serper_api_key=os.getenv("SERPER_API_KEY")
-        )
+        fact_checker = fact_checker_instance
         
         # Generate the fact check report
         fact_check_result = fact_checker.generate_report(news_result['summary'])
@@ -73,7 +70,8 @@ async def fact_check_selected_news(selection: NewsSelectionInput):
                 "fact_check_result": {
                     "detailed_analysis": {
                         "overall_analysis": fact_check_result["detailed_analysis"]["overall_analysis"],
-                        "claim_analysis": fact_check_result["detailed_analysis"]["claim_analysis"]
+                        "claim_analysis": fact_check_result["detailed_analysis"]["claim_analysis"],
+                        "source_analysis": fact_check_result["source_credibility"]
                     }
                 },
                 "sources": fact_check_result["sources"]
@@ -94,7 +92,7 @@ async def get_fc_url(input_data: UrlInput):
             }
         
         
-        fact_checker = FactChecker(groq_api_key=os.getenv("GROQ_API_KEY"), serper_api_key=os.getenv("SERPER_API_KEY"))
+        fact_checker = fact_checker_instance
         # Run fact check - it will be run through transformation pipeline
         fact_check_result1 = fact_checker.generate_report(news_text['text'])
         
@@ -105,7 +103,8 @@ async def get_fc_url(input_data: UrlInput):
                 "fact_check_result": {
                     "detailed_analysis" : {
                         "overall_analysis" : fact_check_result1["detailed_analysis"]["overall_analysis"],
-                        "claim_analysis" : fact_check_result1["detailed_analysis"]["claim_analysis"]
+                        "claim_analysis" : fact_check_result1["detailed_analysis"]["claim_analysis"],
+                        "source_analysis" : fact_check_result1["source_credibility"]
                     }
                 },
                 "sources": fact_check_result1["sources"]
@@ -117,7 +116,7 @@ async def get_fc_url(input_data: UrlInput):
 @input_router.post("/get-fc-text")
 async def get_fc_text(input_data: TextInput):
     try:
-        fact_checker = FactChecker(groq_api_key=os.getenv("GROQ_API_KEY"), serper_api_key=os.getenv("SERPER_API_KEY"))
+        fact_checker = fact_checker_instance
         # Run fact check - it will be run through transformation pipeline
         fact_check_result1 = fact_checker.generate_report(input_data.text)
    
@@ -128,7 +127,8 @@ async def get_fc_text(input_data: TextInput):
                 "fact_check_result": {
                     "detailed_analysis" : {
                         "overall_analysis" : fact_check_result1["detailed_analysis"]["overall_analysis"],
-                        "claim_analysis" : fact_check_result1["detailed_analysis"]["claim_analysis"]
+                        "claim_analysis" : fact_check_result1["detailed_analysis"]["claim_analysis"],
+                        "source_analysis" : fact_check_result1["source_credibility"]
                     }
                 },
                 "sources": fact_check_result1["sources"]

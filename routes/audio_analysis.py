@@ -5,18 +5,14 @@
 # import whisper
 # from typing import Dict, Any
 # import time
-# from fact_checker import FactChecker
-
+# from factcheck_instance import fact_checker_instance
 # audio_router = APIRouter()
 
 # # Initialize the whisper model
 # model = whisper.load_model("base")  # You can use "tiny", "base", "small", "medium", or "large"
 
 # # Initialize the fact checker with API keys from environment variables
-# fact_checker = FactChecker(
-#     groq_api_key=os.getenv("GROQ_API_KEY"),
-#     serper_api_key=os.getenv("SERPER_API_KEY")
-# )
+# fact_checker = fact_checker_instance
 
 # @audio_router.post("/analyze-audio")
 # async def analyze_audio_endpoint(file: UploadFile = File(...)):
