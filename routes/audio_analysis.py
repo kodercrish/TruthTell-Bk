@@ -188,7 +188,7 @@ async def analyze_audio_endpoint(file: UploadFile = File(...)):
         if audio.state != 2:
             raise HTTPException(status_code=500, detail="Audio processing timed out")
         
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.0-flash')
         
         # More specific and structured prompt
         prompt = """
