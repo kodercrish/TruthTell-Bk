@@ -302,7 +302,7 @@ class FactChecker:
         
         Please provide numerical scores where applicable and cite specific evidence examples to support your analysis.
         """
-            
+                    
         enhanced_report = self.gemini_client.generate_content(report_prompt)
         result_dict['detailed_analysis'] = json.loads(enhanced_report.text)
 
