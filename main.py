@@ -14,7 +14,7 @@ from pusher_api import pusher_client
 from routes.video_analysis import video_router
 from routes.image_analysis import image_router
 from routes.audio_analysis import audio_router
-from routes.deepfake_audio import audio_router
+from routes.deepfake_audio import deepfake_audio_router
 from routes import video_broadcast
 
 news_fetcher = NewsFetcher()
@@ -65,7 +65,7 @@ app.include_router(router, tags=["User Broadcast"])
 app.include_router(video_router, tags=["Video Analysis"])
 app.include_router(image_router, tags=["Image Analysis"])
 app.include_router(audio_router, tags=["Audio Analysis"])
-app.include_router(audio_router, tags=["Audio Detection"])
+app.include_router(deepfake_audio_router, tags=["Audio Detection"])
 app.include_router(video_broadcast.router)
 @app.get("/")
 def read_root():

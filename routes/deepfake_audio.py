@@ -6,7 +6,7 @@ import os
 from typing import Dict
 import tempfile
 
-audio_router = APIRouter()
+deepfake_audio_router = APIRouter()
 
 # # Load trained model
 # model = xgb.XGBClassifier()
@@ -54,7 +54,7 @@ def predict_long_audio(file_path, segment_length=2, overlap=1):
 
     return label, confidence
 
-@audio_router.post("/detect-audio")
+@deepfake_audio_router.post("/detect-audio")
 async def detect_audio(audio_file: UploadFile = File(...)) -> Dict:
     try:
         # Create temporary file to store the uploaded audio

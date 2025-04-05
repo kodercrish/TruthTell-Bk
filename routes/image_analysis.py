@@ -14,7 +14,7 @@ async def analyze_image_endpoint(file: UploadFile = File(...)):
     
     # Configure Gemini
     genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.0-flash')
     
     # Prepare prompt
     prompt = "Analyze the content in this image and detect if it contains misinformation or bias. First state if the content is real or fake. Then give a short summary regarding the content. Then Summarize key points."
