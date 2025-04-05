@@ -122,7 +122,7 @@
 #         time.sleep(0.36)
 #         audio = genai.get_file(audio.name)
     
-#     model = genai.GenerativeModel('gemini-1.5-flash')
+#     model = genai.GenerativeModel('gemini-2.0-flash')
     
 #     # Prepare prompt
 #     prompt = "Analyze the speech in this audio file and detect if it contains misinformation or bias. First state if the content is real or fake. Then give a short summary regarding the speech. Then Summarize key points."

@@ -156,7 +156,7 @@ class FactChecker:
         
         #############################################################
         self.gemini_client = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
+            model_name="gemini-2.0-flash",
             generation_config=generation_config,
         )
         self.gemini_chat = self.gemini_client.start_chat(
@@ -165,7 +165,7 @@ class FactChecker:
         
         #############################################################
         self.source_correction = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
+            model_name="gemini-2.0-flash",
             generation_config=generation_config_sources,
         )
         self.gemini_chat_sources = self.source_correction.start_chat(
@@ -209,7 +209,7 @@ class FactChecker:
         }
 
         model_questions = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
+            model_name="gemini-2.0-flash",
             generation_config=generation_config_questions,
         )
 
