@@ -9,3 +9,4 @@ venv
 deployment_logs/*
 nlp_model/knowledge_graph_final.pkl
 nlp_model/checkpoint-753/*
+deepfake_detection/deepfake_detector.h5
