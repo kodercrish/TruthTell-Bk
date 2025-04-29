@@ -64,7 +64,6 @@ async def initialize_models():
     except Exception as e:
         print(f"Error loading NLP models: {str(e)}")
         # We'll initialize on first request if this fails
-
 def generate_knowledge_graph_viz(text):
     global nlp, tokenizer, model
     
@@ -74,7 +73,7 @@ def generate_knowledge_graph_viz(text):
             nlp, tokenizer, model = load_models()
         except Exception as e:
             print(f"Error loading models: {str(e)}")
-            return {}
+            return {"error": f"Failed to load models: {str(e)}"}
     
     try:
         kg_builder = KnowledgeGraphBuilder()
@@ -90,8 +89,12 @@ def generate_knowledge_graph_viz(text):
         all_edges = list(kg_builder.knowledge_graph.edges())
         total_edges = len(all_edges)
         
+        if total_edges == 0:
+            return {"error": "No edges found in knowledge graph for visualization"}
+        
         # Select only 60% of edges to display (0.3 + 0.15 + 0.15)
         display_edge_count = int(total_edges * 0.6)
+        display_edge_count = max(1, display_edge_count)  # Ensure at least one edge
         display_edges = random.sample(all_edges, k=min(display_edge_count, total_edges))
         
         # Determine edge counts for each color
@@ -99,13 +102,18 @@ def generate_knowledge_graph_viz(text):
         opposite_color_count = int(total_edges * 0.15)  # 15% opposite color
         orange_color_count = int(total_edges * 0.15)  # 15% orange
         
+        # Ensure minimum counts
+        primary_color_count = max(1, primary_color_count)
+        opposite_color_count = max(1, opposite_color_count)
+        orange_color_count = max(1, orange_color_count)
+        
         # Ensure we don't exceed the number of display edges
         total_colored = primary_color_count + opposite_color_count + orange_color_count
         if total_colored > len(display_edges):
             ratio = len(display_edges) / total_colored
-            primary_color_count = int(primary_color_count * ratio)
-            opposite_color_count = int(opposite_color_count * ratio)
-            orange_color_count = int(orange_color_count * ratio)
+            primary_color_count = max(1, int(primary_color_count * ratio))
+            opposite_color_count = max(1, int(opposite_color_count * ratio))
+            orange_color_count = max(1, int(orange_color_count * ratio))
         
         # Shuffle display edges to ensure random distribution
         random.shuffle(display_edges)
@@ -204,20 +212,36 @@ def generate_knowledge_graph_viz(text):
             )
         )
         
-        # Convert the figure to an image and encode it as base64
-        img_bytes = pio.to_image(fig, format="png")
-        encoded_image = base64.b64encode(img_bytes).decode('utf-8')
+        # First, try to return just the figure data
+        figure_data = fig.to_dict()
         
-        # Return both the figure data and the base64 encoded image
-        return {
-            "figure_data": fig.to_dict(),
-            "image": encoded_image
-        }
+        try:
+            # Check if kaleido is installed for image conversion
+            import kaleido
+            # Convert the figure to an image and encode it as base64
+            img_bytes = pio.to_image(fig, format="png")
+            encoded_image = base64.b64encode(img_bytes).decode('utf-8')
+            
+            # Return both the figure data and the base64 encoded image
+            return {
+                "figure_data": figure_data,
+                "image": encoded_image
+            }
+        except Exception as e:
+            print(f"Error converting graph to image: {str(e)}")
+            # If image conversion fails, return just the figure data
+            return {
+                "figure_data": figure_data,
+                "error_image": str(e)
+            }
         
     except Exception as e:
-        print(f"Error generating knowledge graph visualization: {str(e)}")
-        # Return an empty dict if there's an error
-        return {}
+        error_msg = f"Error generating knowledge graph visualization: {str(e)}"
+        print(error_msg)
+        import traceback
+        traceback.print_exc()
+        # Return an error message
+        return {"error": error_msg}
 
 
 @nlp_router.post("/analyze", response_model=PredictionResponse)
