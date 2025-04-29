@@ -3,6 +3,10 @@ from pydantic import BaseModel
 import sys
 import os
 from typing import Dict, Any
+import io
+import base64
+from PIL import Image
+import plotly.io as pio
 
 # Add the nlp_model directory to the path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -60,6 +64,7 @@ async def initialize_models():
     except Exception as e:
         print(f"Error loading NLP models: {str(e)}")
         # We'll initialize on first request if this fails
+
 
 def generate_knowledge_graph_viz(text):
     global nlp, tokenizer, model
@@ -193,11 +198,23 @@ def generate_knowledge_graph_viz(text):
             xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
             yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
             plot_bgcolor='rgba(0,0,0,0)',
-            paper_bgcolor='rgba(0,0,0,0)'
+            paper_bgcolor='rgba(0,0,0,0)',
+            width=800,
+            height=600
         )
     )
     
-    return fig.to_dict()
+    # Convert the figure to an image
+    img_bytes = pio.to_image(fig, format="png")
+    
+    # Convert to base64 for easy inclusion in JSON response
+    base64_img = base64.b64encode(img_bytes).decode('utf-8')
+    
+    return {
+        "image": f"data:image/png;base64,{base64_img}",
+        "is_fake": is_fake
+    }
+
 
 @nlp_router.post("/analyze", response_model=PredictionResponse)
 async def analyze_news(news_input: NewsInput):
@@ -256,12 +273,13 @@ async def analyze_news(news_input: NewsInput):
     entities_list = [{"entity": entity, "type": entity_type} for entity, entity_type in entities]
     
     # Generate knowledge graph visualization
-    kg_viz = generate_knowledge_graph_viz(news_input.text)
-    
+    kg_viz = generate_knowledge_graph_viz(news_input.text)    
+
     # Prepare detailed analysis
     detailed_analysis = {
         "entities": entities_list,
-        "knowledge_graph": kg_viz,
+        "knowledge_graph_image": kg_viz["image"],
+        "is_fake": kg_viz["is_fake"],
         "gemini_analysis": gemini_result
     }
     
