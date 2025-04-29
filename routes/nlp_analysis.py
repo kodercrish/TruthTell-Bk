@@ -65,7 +65,6 @@ async def initialize_models():
         print(f"Error loading NLP models: {str(e)}")
         # We'll initialize on first request if this fails
 
-
 def generate_knowledge_graph_viz(text):
     global nlp, tokenizer, model
     
@@ -199,12 +198,21 @@ def generate_knowledge_graph_viz(text):
                 xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
                 yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
                 plot_bgcolor='rgba(0,0,0,0)',
-                paper_bgcolor='rgba(0,0,0,0)'
+                paper_bgcolor='rgba(0,0,0,0)',
+                width=800,
+                height=600
             )
         )
         
-        # Return the figure as a dictionary without trying to convert to image
-        return fig.to_dict()
+        # Convert the figure to an image and encode it as base64
+        img_bytes = pio.to_image(fig, format="png")
+        encoded_image = base64.b64encode(img_bytes).decode('utf-8')
+        
+        # Return both the figure data and the base64 encoded image
+        return {
+            "figure_data": fig.to_dict(),
+            "image": encoded_image
+        }
         
     except Exception as e:
         print(f"Error generating knowledge graph visualization: {str(e)}")
