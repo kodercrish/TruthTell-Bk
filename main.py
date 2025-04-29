@@ -16,6 +16,8 @@ from routes.image_analysis import image_router
 from routes.audio_analysis import audio_router
 from routes.deepfake_audio import deepfake_audio_router
 from routes import video_broadcast
+from routes.nlp_analysis import nlp_router
+from routes.deepfake_detection import deepfake_router
 
 news_fetcher = NewsFetcher()
 
@@ -67,6 +69,8 @@ app.include_router(image_router, tags=["Image Analysis"])
 app.include_router(audio_router, tags=["Audio Analysis"])
 app.include_router(deepfake_audio_router, tags=["Audio Detection"])
 app.include_router(video_broadcast.router)
+app.include_router(nlp_router, prefix="/nlp", tags=["NLP Analysis"])
+app.include_router(deepfake_router, prefix="/deepfake", tags=["Deepfake Detection"])
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the API"}
