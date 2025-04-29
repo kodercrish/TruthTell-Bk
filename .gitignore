@@ -7,3 +7,5 @@ nexus-truthtell.json
 1.26.0
 venv
 deployment_logs/*
+nlp_model/knowledge_graph_final.pkl
+nlp_model/checkpoint-753/*
