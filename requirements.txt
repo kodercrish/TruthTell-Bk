@@ -112,3 +112,5 @@ opencv-python>=4.7.0
 networkx>=2.8.0
 huggingface_hub>=0.16.0
 sentencepiece>=0.1.95
+matplotlib
+neo4j

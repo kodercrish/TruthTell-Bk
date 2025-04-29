@@ -7,6 +7,8 @@ import io
 import base64
 from PIL import Image
 import plotly.io as pio
+import matplotlib.pyplot as plt
+import networkx as nx
 
 # Add the nlp_model directory to the path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -64,6 +66,7 @@ async def initialize_models():
     except Exception as e:
         print(f"Error loading NLP models: {str(e)}")
         # We'll initialize on first request if this fails
+
 def generate_knowledge_graph_viz(text):
     global nlp, tokenizer, model
     
@@ -85,155 +88,54 @@ def generate_knowledge_graph_viz(text):
         # Update knowledge graph
         kg_builder.update_knowledge_graph(text, not is_fake, nlp)
 
-        # Get all edges from the knowledge graph
-        all_edges = list(kg_builder.knowledge_graph.edges())
-        total_edges = len(all_edges)
+        # Create a simple directed graph visualization
+        G = kg_builder.knowledge_graph
         
-        if total_edges == 0:
-            return {"error": "No edges found in knowledge graph for visualization"}
+        # If graph is empty, create a simple placeholder graph
+        if len(G.nodes()) == 0:
+            G.add_node("No entities found", type="PLACEHOLDER")
         
-        # Select only 60% of edges to display (0.3 + 0.15 + 0.15)
-        display_edge_count = int(total_edges * 0.6)
-        display_edge_count = max(1, display_edge_count)  # Ensure at least one edge
-        display_edges = random.sample(all_edges, k=min(display_edge_count, total_edges))
+        # Create a matplotlib figure
+        plt.figure(figsize=(10, 8))
         
-        # Determine edge counts for each color
-        primary_color_count = int(total_edges * 0.3)  # 30% primary color (green for real, red for fake)
-        opposite_color_count = int(total_edges * 0.15)  # 15% opposite color
-        orange_color_count = int(total_edges * 0.15)  # 15% orange
+        # Use spring layout for node positioning
+        pos = nx.spring_layout(G)
         
-        # Ensure minimum counts
-        primary_color_count = max(1, primary_color_count)
-        opposite_color_count = max(1, opposite_color_count)
-        orange_color_count = max(1, orange_color_count)
+        # Draw nodes with different colors based on entity type
+        node_colors = []
+        for node in G.nodes():
+            node_type = G.nodes[node].get('type', 'UNKNOWN')
+            if node_type == 'PERSON':
+                node_colors.append('lightblue')
+            elif node_type == 'ORG':
+                node_colors.append('lightgreen')
+            elif node_type == 'GPE':
+                node_colors.append('orange')
+            elif node_type == 'DATE':
+                node_colors.append('yellow')
+            else:
+                node_colors.append('gray')
         
-        # Ensure we don't exceed the number of display edges
-        total_colored = primary_color_count + opposite_color_count + orange_color_count
-        if total_colored > len(display_edges):
-            ratio = len(display_edges) / total_colored
-            primary_color_count = max(1, int(primary_color_count * ratio))
-            opposite_color_count = max(1, int(opposite_color_count * ratio))
-            orange_color_count = max(1, int(orange_color_count * ratio))
+        # Draw the graph
+        nx.draw(G, pos, with_labels=True, node_color=node_colors, 
+                node_size=1500, font_size=10, font_weight='bold', 
+                edge_color='gray', width=1, alpha=0.7)
         
-        # Shuffle display edges to ensure random distribution
-        random.shuffle(display_edges)
+        # Add a title
+        plt.title(f"Knowledge Graph - {'FAKE' if is_fake else 'REAL'} News Analysis", 
+                  fontsize=16, fontweight='bold')
         
-        # Assign colors to edges
-        primary_color_edges = set(display_edges[:primary_color_count])
-        opposite_color_edges = set(display_edges[primary_color_count:primary_color_count+opposite_color_count])
-        orange_color_edges = set(display_edges[primary_color_count+opposite_color_count:
-                                              primary_color_count+opposite_color_count+orange_color_count])
+        # Save the figure to a bytes buffer
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', dpi=100, bbox_inches='tight')
+        plt.close()
         
-        # Create a new graph with selected edges
-        selected_graph = nx.DiGraph()
-        selected_graph.add_nodes_from(kg_builder.knowledge_graph.nodes(data=True))
-        selected_graph.add_edges_from(display_edges)
+        # Encode the image as base64
+        buf.seek(0)
+        img_str = base64.b64encode(buf.read()).decode('utf-8')
         
-        pos = nx.spring_layout(selected_graph)
-        
-        # Create three edge traces - primary, opposite, and orange
-        primary_edge_trace = go.Scatter(
-            x=[], y=[],
-            line=dict(
-                width=2, 
-                color='rgba(255,0,0,0.7)' if is_fake else 'rgba(0,255,0,0.7)'  # Red if fake, green if real
-            ),
-            hoverinfo='none',
-            mode='lines'
-        )
-        
-        opposite_edge_trace = go.Scatter(
-            x=[], y=[],
-            line=dict(
-                width=2, 
-                color='rgba(0,255,0,0.7)' if is_fake else 'rgba(255,0,0,0.7)'  # Green if fake, red if real
-            ),
-            hoverinfo='none',
-            mode='lines'
-        )
-        
-        orange_edge_trace = go.Scatter(
-            x=[], y=[],
-            line=dict(
-                width=2, 
-                color='rgba(255,165,0,0.7)'  # Orange
-            ),
-            hoverinfo='none',
-            mode='lines'
-        )
-        
-        node_trace = go.Scatter(
-            x=[], y=[],
-            mode='markers+text',
-            hoverinfo='text',
-            textposition='top center',
-            marker=dict(
-                size=15,
-                color='white',
-                line=dict(width=2, color='black')
-            ),
-            text=[]
-        )
-        
-        # Add edges with appropriate colors
-        for edge in display_edges:
-            x0, y0 = pos[edge[0]]
-            x1, y1 = pos[edge[1]]
-            
-            if edge in primary_color_edges:
-                primary_edge_trace['x'] += (x0, x1, None)
-                primary_edge_trace['y'] += (y0, y1, None)
-            elif edge in opposite_color_edges:
-                opposite_edge_trace['x'] += (x0, x1, None)
-                opposite_edge_trace['y'] += (y0, y1, None)
-            elif edge in orange_color_edges:
-                orange_edge_trace['x'] += (x0, x1, None)
-                orange_edge_trace['y'] += (y0, y1, None)
-        
-        # Add nodes
-        for node in selected_graph.nodes():
-            x, y = pos[node]
-            node_trace['x'] += (x,)
-            node_trace['y'] += (y,)
-            node_trace['text'] += (node,)
-        
-        fig = go.Figure(
-            data=[primary_edge_trace, opposite_edge_trace, orange_edge_trace, node_trace],
-            layout=go.Layout(
-                showlegend=False,
-                hovermode='closest',
-                margin=dict(b=0,l=0,r=0,t=0),
-                xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-                yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-                plot_bgcolor='rgba(0,0,0,0)',
-                paper_bgcolor='rgba(0,0,0,0)',
-                width=800,
-                height=600
-            )
-        )
-        
-        # First, try to return just the figure data
-        figure_data = fig.to_dict()
-        
-        try:
-            # Check if kaleido is installed for image conversion
-            import kaleido
-            # Convert the figure to an image and encode it as base64
-            img_bytes = pio.to_image(fig, format="png")
-            encoded_image = base64.b64encode(img_bytes).decode('utf-8')
-            
-            # Return both the figure data and the base64 encoded image
-            return {
-                "figure_data": figure_data,
-                "image": encoded_image
-            }
-        except Exception as e:
-            print(f"Error converting graph to image: {str(e)}")
-            # If image conversion fails, return just the figure data
-            return {
-                "figure_data": figure_data,
-                "error_image": str(e)
-            }
+        # Return just the base64 encoded image
+        return {"image": img_str}
         
     except Exception as e:
         error_msg = f"Error generating knowledge graph visualization: {str(e)}"
