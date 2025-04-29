@@ -1,6 +1,6 @@
 import os
-import io
-import cv2
+# import io
+# import cv2
 import numpy as np
 from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
