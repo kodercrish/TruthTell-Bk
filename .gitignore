@@ -4,3 +4,5 @@ log/
 .env
 nexus-truthtell.json
 .vscode/
+1.26.0
+venv

@@ -42,7 +42,7 @@ async def lifespan(app: FastAPI):
     if len(list(news_docs)) == 0:
         news_fetcher.fetch_initial_news()
     
-    scheduler.add_job(fetch_and_broadcast_news, 'interval', seconds=30)
+    scheduler.add_job(fetch_and_broadcast_news, 'interval', seconds=60000000)
     # await fetch_and_broadcast_news()
     scheduler.start()
     yield
